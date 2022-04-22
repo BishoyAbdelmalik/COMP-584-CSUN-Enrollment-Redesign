@@ -18,7 +18,7 @@ export const profileSlice = createSlice({
         // which detects changes to a "draft state" and produces a brand new
         // immutable state based off those changes
         state.email = action.payload.email;
-        state.mainSubject = action.payload.major;
+        state.mainSubject = action.payload.mainSubject;
         state.status = 'logged-in';
 
 
@@ -51,8 +51,8 @@ export const profileSlice = createSlice({
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const selectMainSubject = (state) => state.profileSlice.mainSubject;
-export const selectEmail = (state) => state.profileSlice.email;
-export const selectStatus = (state) => state.profileSlice.status;
+export const selectMainSubject = (state) => state.profile.mainSubject;
+export const selectEmail = (state) => state.profile.email;
+export const selectStatus = (state) => state.profile.status;
 
 export default profileSlice.reducer;
