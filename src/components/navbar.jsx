@@ -6,15 +6,17 @@ import {
   //  NavDropdown
 } from "react-bootstrap";
 import logo from "./../CSUNorthridgelogo.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import  {logout}  from "../reducers/profileSlice";
 
 const NavBar = (props) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const signOut = ()=>{
+    navigate("/", { replace: true });
     dispatch(logout());
-    document.location.href="/";
 
   }
   return (
@@ -49,7 +51,7 @@ const NavBar = (props) => {
             >
               Wishlist
             </Link>
-            <Nav.Link href="#" onClick={signOut}>
+            <Nav.Link onClick={signOut}>
                 Log out
             </Nav.Link>
 
