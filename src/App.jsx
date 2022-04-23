@@ -13,6 +13,7 @@ import { Container } from "react-bootstrap";
 import Example from "./routes/example";
 import { useSelector } from "react-redux";
 import { selectStatus } from "./reducers/profileSlice";
+import logo from "./CSUNorthridgelogo.svg";
 
 function App() {
   const status = useSelector(selectStatus);
@@ -20,7 +21,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {status !== "" ? <NavBar /> : null}
+        {status !== "" ? <NavBar  logo={logo}/> : null}
 
         <Container className="pt-3 pb-3">
           <Routes>

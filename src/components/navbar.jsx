@@ -5,7 +5,6 @@ import {
   Container,
   //  NavDropdown
 } from "react-bootstrap";
-import logo from "./../CSUNorthridgelogo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import  {logout}  from "../reducers/profileSlice";
@@ -25,7 +24,7 @@ const NavBar = (props) => {
         <Link to="/" className="text-decoration-none text-dark navbar-brand">
           <img
             alt=""
-            src={logo}
+            src={props.logo}
             height="30"
             className="d-inline-block align-content-center"
           />{" "}
