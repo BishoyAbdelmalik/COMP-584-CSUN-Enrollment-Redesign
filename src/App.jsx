@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {status !== "" ? <NavBar  logo={logo}/> : null}
+        {status !== "" ? <NavBar logo={logo} /> : null}
 
         <Container className="pt-3 pb-3">
           <Routes>
@@ -34,7 +34,10 @@ function App() {
                 <Route path="courseView" element={<CourseView />} />
               </>
             ) : null}
-            <Route path="*" element={<h1 className="text-center">404 Not Found</h1>} />
+            <Route
+              path="*"
+              element={<h1 className="text-center">404 Not Found</h1>}
+            />
           </Routes>
         </Container>
       </BrowserRouter>
