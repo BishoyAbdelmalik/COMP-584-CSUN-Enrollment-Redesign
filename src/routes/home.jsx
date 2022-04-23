@@ -1,13 +1,11 @@
 import React from "react";
 import { selectStatus } from "../reducers/profileSlice";
-import style from "./../App.module.scss";
-import { useSelector, useDispatch } from 'react-redux';
+// import style from "./../App.module.scss";
+import { useSelector } from 'react-redux';
 import Login from "../components/login";
 
 const Home = () => {
   const status = useSelector(selectStatus);
-  const dispatch = useDispatch();
-  // console.log();
 
   return (
     <>

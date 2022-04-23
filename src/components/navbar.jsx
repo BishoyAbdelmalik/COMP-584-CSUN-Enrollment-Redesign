@@ -7,8 +7,16 @@ import {
 } from "react-bootstrap";
 import logo from "./../CSUNorthridgelogo.svg";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import  {logout}  from "../reducers/profileSlice";
 
 const NavBar = (props) => {
+  const dispatch = useDispatch();
+  const signOut = ()=>{
+    dispatch(logout());
+    document.location.href="/";
+
+  }
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -41,6 +49,9 @@ const NavBar = (props) => {
             >
               Wishlist
             </Link>
+            <Nav.Link href="#" onClick={signOut}>
+                Log out
+            </Nav.Link>
 
             {/*<NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

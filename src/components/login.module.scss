@@ -1,0 +1,24 @@
+.form {
+    width: 50%;
+}
+
+.googleIcon {
+    width: 36px;
+    height: 36px;
+    margin: 5px;
+}
+
+.fitPageHeight {
+    height: 100vh;
+    overflow: auto;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+@media screen and (max-width:991px) {
+    .form {
+        width: 100%;
+    }
+}

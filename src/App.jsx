@@ -11,19 +11,29 @@ import CourseView from "./routes/courseView";
 import NavBar from "./components/navbar";
 import { Container } from "react-bootstrap";
 import Example from "./routes/example";
+import { useSelector } from "react-redux";
+import { selectStatus } from "./reducers/profileSlice";
 
 function App() {
+  const status = useSelector(selectStatus);
+
   return (
     <>
       <BrowserRouter>
-        <NavBar />
-        <Container>
+        {status !== "" ? <NavBar /> : null}
+
+        <Container className="pt-3 pb-3">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="example" element={<Example />} />
-            <Route path="search" element={<Search />} />
-            <Route path="wishlist" element={<Wishlist />} />
-            <Route path="courseView" element={<CourseView />} />
+            {status !== "" ? (
+              <>
+                <Route path="example" element={<Example />} />
+                <Route path="search" element={<Search />} />
+                <Route path="wishlist" element={<Wishlist />} />
+                <Route path="courseView" element={<CourseView />} />
+              </>
+            ) : null}
+            <Route path="*" element={<h1 className="text-center">404 Not Found</h1>} />
           </Routes>
         </Container>
       </BrowserRouter>
