@@ -1,4 +1,3 @@
-import React from "react";
 import { selectStatus } from "../reducers/profileSlice";
 // import style from "./../App.module.scss";
 import { useSelector } from 'react-redux';
