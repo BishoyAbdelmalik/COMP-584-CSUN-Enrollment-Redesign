@@ -42,7 +42,7 @@ const Login = () => {
       <div
         className={classNames(
           "d-flex justify-content-center align-items-center",
-          style.pointer
+          "pointer"
         )}
         onClick={() => {}}
       >
