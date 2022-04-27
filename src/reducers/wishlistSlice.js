@@ -18,14 +18,17 @@ export const wishlistSlice = createSlice({
         let exampleClass = {
             semester: null | "semester name ie fall 2022",
             id: "comp-110",
-            name: "Introduction to Algorithms and Programming"
+            name: "Introduction to Algorithms and Programming",
+            units: 3
         }*/
+        const newClassId=action.payload.id;
+        if(state.find(e=>e.id===newClassId)){
+          return state;
+        }
         return [...state,action.payload]
-
-
       },
       removeClass: (state,action) => {
-          let classId = action.payload.toLowerCase();
+          const classId = action.payload.toLowerCase();
           return state.filter(({id})=>id!==classId);
       }
     },
