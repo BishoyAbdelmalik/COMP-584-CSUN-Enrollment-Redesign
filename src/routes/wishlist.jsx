@@ -1,13 +1,17 @@
+import classNames from "classnames";
 import { useSelector } from "react-redux";
 import WishlistClasses from "../components/wishlistClasses";
 import { selectWishlist } from "../reducers/wishlistSlice";
+import appStyles from "./../App.module.scss"
 
 export default function Wishlist() {
   const wishlist = useSelector(selectWishlist);
   return (
     <>
       <h2 className="text-center">My Bookmarked Courses</h2>
-      <WishlistClasses classes={wishlist}/>
+      <div className={classNames("mx-auto",appStyles.form)}>
+        <WishlistClasses classes={wishlist}/>
+      </div>
     </>
   );
 }
