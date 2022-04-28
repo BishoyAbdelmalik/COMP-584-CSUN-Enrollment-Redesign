@@ -16,7 +16,7 @@ const ClassCompact = ({ id, name, units }) => {
                 target.classList.toggle(style.selected);
                 setShow(!show); 
             }} />
-            <Dropdown.Menu xp show={show} align={{ sm: "end" }}>
+            <Dropdown.Menu show={show} align={{ sm: "end" }}>
                 <Dropdown.Item href="#">Action</Dropdown.Item>
                 <Dropdown.Item href="#">Another action</Dropdown.Item>
                 <Dropdown.Item href="#">Something else</Dropdown.Item>
