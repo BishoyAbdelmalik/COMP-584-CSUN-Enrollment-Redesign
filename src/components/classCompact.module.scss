@@ -1,0 +1,27 @@
+.grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+}
+
+.grid {
+    p {
+        grid-column: 1/3;
+    }
+}
+
+.dots {
+    grid-column: 3;
+    grid-row: 1/3;
+    width: auto;
+    height: 30px;
+    cursor: pointer;
+    color: grey;
+}
+
+.selected,
+.dots:hover {
+    color: black;
+}
+
+.dropdown {}
