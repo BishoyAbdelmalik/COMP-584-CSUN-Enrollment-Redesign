@@ -8,7 +8,9 @@ const LoginForm = ({ onClick, emailState, passwordState }) => {
 
   return (
     <>
-      <Form className={classNames("d-flex", "flex-column", "mx-auto", style.form)}>
+      <Form
+        className={classNames("d-flex", "flex-column", "mx-auto", style.form)}
+      >
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
             type="email"
@@ -32,9 +34,10 @@ const LoginForm = ({ onClick, emailState, passwordState }) => {
         <Button
           variant="primary"
           className="rounded-0 w-50 mx-auto"
-          onClick={onClick}
+          onClick={() => onClick("manual")}
+          button-type="manual"
         >
-          Sign In
+          Log In
         </Button>
       </Form>
     </>

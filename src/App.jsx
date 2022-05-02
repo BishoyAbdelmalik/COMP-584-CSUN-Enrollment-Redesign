@@ -15,25 +15,28 @@ import { useSelector } from "react-redux";
 import { selectStatus } from "./reducers/profileSlice";
 import logo from "./CSUNorthridgelogo.svg";
 
+import { UserAuthContextProvider } from "./context/UserAuthContext";
+import Login from "./components/login";
+
 function App() {
   const status = useSelector(selectStatus);
 
   return (
     <>
       <BrowserRouter>
-        {status !== "" ? <NavBar logo={logo} /> : null}
+        {!!status && <NavBar logo={logo} />}
 
         <Container className="pt-3 pb-3">
           <Routes>
             <Route path="/" element={<Home />} />
-            {status !== "" ? (
+            {status === "" && (
               <>
                 <Route path="example" element={<Example />} />
                 <Route path="search" element={<Search />} />
                 <Route path="wishlist" element={<Wishlist />} />
                 <Route path="courseView" element={<CourseView />} />
               </>
-            ) : null}
+            )}
             <Route
               path="*"
               element={<h1 className="text-center">404 Not Found</h1>}
