@@ -17,7 +17,7 @@ const NavBar = (props) => {
 
   const brandOnClick = (e) => {
     navigate("/", { replace: true });
-    setActive("Home");
+    setActive("Search");
   };
   const links = [
     {

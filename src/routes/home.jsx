@@ -9,6 +9,7 @@ import { auth } from "../firebase";
 
 import Login from "../components/login";
 import Signup from "../components/Signup";
+import Search from "./search";
 
 const Home = () => {
   const status = useSelector(selectStatus);
@@ -37,7 +38,7 @@ const Home = () => {
     };
   }, [dispatch]);
 
-  return <>{!status ? <Login /> : <h1>Hello</h1>}</>;
+  return <>{!status ? <Login /> : <Search />}</>;
 };
 
 export default Home;

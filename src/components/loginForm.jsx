@@ -1,6 +1,6 @@
 import { Form, Button } from "react-bootstrap";
 import classNames from "classnames";
-import style from "./login.module.scss";
+import appStyles from "./../App.module.scss";
 
 const LoginForm = ({ onClick, emailState, passwordState }) => {
   const [email, setEmail] = emailState;
@@ -9,7 +9,12 @@ const LoginForm = ({ onClick, emailState, passwordState }) => {
   return (
     <>
       <Form
-        className={classNames("d-flex", "flex-column", "mx-auto", style.form)}
+        className={classNames(
+          "d-flex",
+          "flex-column",
+          "mx-auto",
+          appStyles.form
+        )}
       >
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
