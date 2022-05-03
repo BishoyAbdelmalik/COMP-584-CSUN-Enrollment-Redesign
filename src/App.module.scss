@@ -37,3 +37,18 @@
         transform: translateY(0px);
     }
 }
+
+.form {
+    width: 50%;
+}
+
+@media screen and (max-width:991px) {
+    .form {
+        width: 100%;
+    }
+}
+
+.grid {
+    display: -ms-grid;
+    display: grid;
+}

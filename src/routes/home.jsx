@@ -8,6 +8,7 @@ import { auth } from "../firebase";
 // import style from "./../App.module.scss";
 
 import Login from "../components/login";
+
 import Signup from "../components/Signup";
 import Search from "./search";
 
