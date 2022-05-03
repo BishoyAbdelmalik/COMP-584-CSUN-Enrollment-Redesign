@@ -29,7 +29,7 @@ function App() {
         <Container className="pt-3 pb-3">
           <Routes>
             <Route path="/" element={<Home />} />
-            {status === "" && (
+            {status !== "" && (
               <>
                 <Route path="example" element={<Example />} />
                 <Route path="search" element={<Search />} />
