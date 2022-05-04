@@ -12,6 +12,8 @@ import Message from "../components/Message";
 import { login, selectError, error } from "../reducers/profileSlice";
 import { useDispatch, useSelector } from "react-redux";
 
+import { manualLoginAction, googleLoginAction } from "../actions/auth";
+
 const Login = () => {
   const emailState = useState("");
   const passwordState = useState("");
@@ -26,30 +28,12 @@ const Login = () => {
   const handleLogin = async (buttonType) => {
     // setError("");
 
-    try {
-      let currentUser;
-      if (buttonType === "google") {
-        currentUser = await googleSignIn();
-      } else {
-        let email = emailState[0];
-        let password = passwordState[0];
-        currentUser = await logIn(email, password);
-      }
-
-      dispatch(
-        login({
-          email: currentUser.email,
-          uid: currentUser.uid,
-          status: "logged-in",
-          mainSubject: "",
-        })
-      );
-
-      dispatch(error({ errorMessage: "" }));
-      navigate("/");
-    } catch (err) {
-      dispatch(error({ errorMessage: err.message }));
-      // setError({ errorMessage: err });
+    if (buttonType === "google") {
+      dispatch(googleLoginAction());
+    } else {
+      let email = emailState[0];
+      let password = passwordState[0];
+      dispatch(manualLoginAction(email, password));
     }
   };
 
