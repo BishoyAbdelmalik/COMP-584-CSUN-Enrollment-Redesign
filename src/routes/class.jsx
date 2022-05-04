@@ -6,6 +6,10 @@ import { MdKeyboardArrowLeft } from "react-icons/md"
 import { ClassTitle } from "../components/classTitle";
 import { Spinner } from "react-bootstrap";
 import { ClassDescription } from "../components/classDescription";
+import { ClassSections } from "../components/classSections";
+import appStyle from "./../App.module.scss"
+import style from "./../components/classPage.module.scss"
+
 export const Class = () => {
     const { id } = useParams();
     const [sections, setSections] = useState([]);
@@ -28,12 +32,13 @@ export const Class = () => {
     return (
         <>
             <Link to={"/search"} className={classNames("text-muted", "text-decoration-none", "mb-2")}><MdKeyboardArrowLeft />Back to search</Link>
-            <div>
+            <div className={classNames(appStyle.grid,style.pageGrid)}>
                 {
                     title === "" ? <Spinner animation="border" /> :
                         <>
                             <ClassTitle id={number} title={title} units={units} />
                             <ClassDescription description={description}/>
+                            <ClassSections sections={sections}/>
                         </>
 
                 }
