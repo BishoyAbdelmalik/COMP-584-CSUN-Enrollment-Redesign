@@ -13,17 +13,13 @@ import { useState } from "react";
 const NavBar = (props) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [active, setActive] = useState("Home");
+  const [active, setActive] = useState("Search");
 
   const brandOnClick = (e) => {
     navigate("/", { replace: true });
     setActive("Search");
   };
   const links = [
-    {
-      text: "Home",
-      click: brandOnClick,
-    },
     {
       text: "Search",
       click: () => {

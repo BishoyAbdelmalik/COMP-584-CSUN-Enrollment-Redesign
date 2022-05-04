@@ -1,7 +1,3 @@
-.form {
-    width: 50%;
-}
-
 .googleIcon {
     width: 36px;
     height: 36px;
@@ -11,10 +7,4 @@
 .fitPageHeight {
     height: 100vh;
     overflow: auto;
-}
-
-@media screen and (max-width:991px) {
-    .form {
-        width: 100%;
-    }
 }
