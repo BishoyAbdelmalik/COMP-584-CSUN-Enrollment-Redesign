@@ -1,13 +1,21 @@
 import { Form, Button } from "react-bootstrap";
 import classNames from "classnames";
-import appStyles from "./../App.module.scss"
+
+import appStyles from "./../App.module.scss";
 const LoginForm = ({ onClick, emailState, passwordState }) => {
-  const [email, setEmail] = emailState;
-  const [password, setPassword] = passwordState;
+  const setEmail = emailState[1];
+  const setPassword = passwordState[1];
 
   return (
     <>
-      <Form className={classNames("d-flex", "flex-column", "mx-auto", appStyles.form)}>
+      <Form
+        className={classNames(
+          "d-flex",
+          "flex-column",
+          "mx-auto",
+          appStyles.form
+        )}
+      >
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
             type="email"
@@ -31,9 +39,10 @@ const LoginForm = ({ onClick, emailState, passwordState }) => {
         <Button
           variant="primary"
           className="rounded-0 w-50 mx-auto"
-          onClick={onClick}
+          onClick={() => onClick("manual")}
+          button-type="manual"
         >
-          Sign In
+          Log In
         </Button>
       </Form>
     </>
