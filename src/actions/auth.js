@@ -1,9 +1,7 @@
-import React, { useState, useContext } from "react";
 
 import { useUserAuth } from "../context/authProviders";
 import { logout, error, login } from "./../reducers/profileSlice";
 
-import * as USER_CONSTANTS from "../constants/userConstants";
 
 export const manualSignUp = (email, password) => async (dispatch) => {
   const { signUp } = useUserAuth();

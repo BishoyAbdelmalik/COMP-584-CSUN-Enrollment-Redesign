@@ -1,10 +1,10 @@
 import { Form, Button } from "react-bootstrap";
 import classNames from "classnames";
-import appStyles from "./../App.module.scss";
 
+import appStyles from "./../App.module.scss";
 const LoginForm = ({ onClick, emailState, passwordState }) => {
-  const [email, setEmail] = emailState;
-  const [password, setPassword] = passwordState;
+  const setEmail = emailState[1];
+  const setPassword = passwordState[1];
 
   return (
     <>

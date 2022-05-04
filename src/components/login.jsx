@@ -1,7 +1,5 @@
-import React, { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Form, Alert } from "react-bootstrap";
-import { Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { BsGoogle } from "react-icons/bs";
 import { useUserAuth } from "../context/authProviders";
 import classNames from "classnames";
@@ -55,18 +53,15 @@ const Login = () => {
         passwordState={passwordState}
         buttonType="manual"
       />
-      {/* <p className="h3 mt-4 mb-4 font-weight-bold">Sign in with:</p> */}
+      <p className="h3 mt-4 mb-4 font-weight-bold">Sign in with:</p>
       <div
         className={classNames(
           "d-flex justify-content-center align-items-center",
           "pointer"
         )}
-        onClick={() => {}}
+        onClick={() => {handleLogin("google") }}
       >
-        <BsGoogle
-          className={style.googleIcon}
-          onClick={() => handleLogin("google")}
-        />
+        <BsGoogle className={style.googleIcon} />
         <p className="m-0">Login with Google</p>
       </div>
     </div>

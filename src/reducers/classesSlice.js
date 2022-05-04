@@ -19,7 +19,7 @@ export const classesSlice = createSlice({
         state.mainSubject = [...state.mainSubject,...action.payload]      
       },
       addGEClass: (state, action)=>{
-        state.ge = [...state.ge,...action.payload]      
+        state.ge = action.payload.ge
       },
       reset:()=>{
         return initialState
@@ -45,7 +45,7 @@ export const classesSlice = createSlice({
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-// export const selectMajor = (state) => state.classesSlice.major;
+export const selectGE = (state) => state.classes.ge;
 // export const selectEmail = (state) => state.classesSlice.email;
 // export const selectStatus = (state) => state.classesSlice.status;
 
