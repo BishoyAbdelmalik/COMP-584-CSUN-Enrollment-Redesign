@@ -6,13 +6,11 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
 
 // import style from "./../App.module.scss";
-import { useDispatch, useSelector } from 'react-redux';
 
 import Login from "../components/login";
 
 import Signup from "../components/Signup";
 import Search from "./search";
-import { useEffect } from "react";
 import { addGEClass } from "../reducers/classesSlice";
 import { getGEClasses } from "../api/utils";
 
