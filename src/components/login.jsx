@@ -1,7 +1,5 @@
-import React, { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Form, Alert } from "react-bootstrap";
-import { Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { BsGoogle } from "react-icons/bs";
 import { useUserAuth } from "../context/authProviders";
 import classNames from "classnames";

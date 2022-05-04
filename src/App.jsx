@@ -15,8 +15,6 @@ import { useSelector } from "react-redux";
 import { selectStatus } from "./reducers/profileSlice";
 import logo from "./CSUNorthridgelogo.svg";
 
-import { UserAuthContextProvider } from "./context/UserAuthContext";
-import Login from "./components/login";
 
 function App() {
   const status = useSelector(selectStatus);
