@@ -1,17 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// console.log(localStorage.getItem("user"), "Tarun");
-// const user = !!localStorage.getItem("user")
-//   ? JSON.parse(localStorage.getItem("user"))
-//   : null;
-
-// const initialState = {
-//   email: !!user ? user.email : "",
-//   status: !!user,
-//   mainSubject: "",
-//   userUUID: !!user ? user.uid : "",
-// };
-
 const initialState = {
   email: "",
   status: "",
@@ -39,6 +27,10 @@ export const profileSlice = createSlice({
       localStorage.clear("user");
       return {};
     },
+    error: (state, action) => {
+      console.log(action);
+      state.errorMessage = action.payload.errorMessage;
+    },
 
     // Use the PayloadAction type to declare the contents of `action.payload`
     //   incrementByAmount: (state, action) => {
@@ -59,7 +51,7 @@ export const profileSlice = createSlice({
   // },
 });
 
-export const { login, logout } = profileSlice.actions;
+export const { login, logout, error } = profileSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
@@ -68,5 +60,6 @@ export const selectMainSubject = (state) => state.profile.mainSubject;
 export const selectEmail = (state) => state.profile.email;
 export const selectStatus = (state) => state.profile.status;
 export const selectUser = (state) => state.profile.user;
+export const selectError = (state) => state.profile.errorMessage;
 
 export default profileSlice.reducer;

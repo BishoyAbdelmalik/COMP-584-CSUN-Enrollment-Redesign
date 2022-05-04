@@ -7,8 +7,9 @@ import { useUserAuth } from "../context/authProviders";
 import classNames from "classnames";
 import style from "./login.module.scss";
 import LoginForm from "./loginForm";
+import Message from "../components/Message";
 
-import { login } from "../reducers/profileSlice";
+import { login, selectError, error } from "../reducers/profileSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
@@ -16,12 +17,14 @@ const Login = () => {
   const passwordState = useState("");
   const dispatch = useDispatch();
 
-  const [error, setError] = useState("");
+  const errorMessage = useSelector(selectError);
+
+  // const [error, setError] = useState("");
   const { logIn, googleSignIn } = useUserAuth();
   const navigate = useNavigate();
 
   const handleLogin = async (buttonType) => {
-    setError("");
+    // setError("");
 
     try {
       let currentUser;
@@ -41,9 +44,12 @@ const Login = () => {
           mainSubject: "",
         })
       );
-      navigate("/home");
+
+      dispatch(error({ errorMessage: "" }));
+      navigate("/");
     } catch (err) {
-      setError(err.message);
+      dispatch(error({ errorMessage: err.message }));
+      // setError({ errorMessage: err });
     }
   };
 
@@ -58,7 +64,7 @@ const Login = () => {
       )}
     >
       <h1 className="mt-3 mb-4 font-weight-bold">myCSUNclass</h1>
-      {error && <Alert variant="danger">{error}</Alert>}
+      {errorMessage && <Message variant="danger">{errorMessage}</Message>}
       <LoginForm
         onClick={handleLogin}
         emailState={emailState}
