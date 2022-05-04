@@ -32,3 +32,4 @@ export const getClasses = (id) =>{
     .then(data => data.classes)
     .catch(err => console.error(err));
 }
+export const getMainSubject = () =>("comp");
