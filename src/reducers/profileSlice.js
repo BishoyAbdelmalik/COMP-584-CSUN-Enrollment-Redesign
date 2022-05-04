@@ -25,7 +25,7 @@ export const profileSlice = createSlice({
     },
     logout: (state) => {
       localStorage.clear("user");
-      return {};
+      return initialState;
     },
     error: (state, action) => {
       console.log(action);
