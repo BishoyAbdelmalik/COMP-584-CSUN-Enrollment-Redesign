@@ -11,10 +11,19 @@ import Login from "../components/login";
 
 import Signup from "../components/Signup";
 import Search from "./search";
+import { addGEClass } from "../reducers/classesSlice";
+import { getGEClasses } from "../api/utils";
 
 const Home = () => {
   const status = useSelector(selectStatus);
   const dispatch = useDispatch();
+
+  useEffect(()=>{
+    if(status==='logged-in'){
+      getGEClasses().then(response =>  dispatch(addGEClass({ge:response})));
+    }
+  }, [status,dispatch])
+
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
