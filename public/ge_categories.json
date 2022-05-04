@@ -1,0 +1,953 @@
+{
+  "ge_categories": [
+    {
+      "name": "A1 - Oral Communication",
+      "courses": [
+        { "id": "aas-151", "name": "Fundamentals of Public Speaking" },
+        { "id": "afrs-151", "name": "Freshman Speech Communication" },
+        { "id": "cas-151", "name": "Fundamentals of Public Speaking" },
+        { "id": "chs-151", "name": "Freshman Speech Communication" },
+        { "id": "coms-151", "name": "Fundamentals of Public Speaking and Lab" }
+      ]
+    },
+    {
+      "name": "A2 - Written Communication",
+      "courses": [
+        { "id": "aas-113b", "name": "Approaches to University Writing B" },
+        { "id": "aas-114b", "name": "Approaches to University Writing B" },
+        { "id": "aas-115", "name": "Approaches to University Writing" },
+        { "id": "afrs-113b", "name": "Approaches to University Writing B" },
+        { "id": "afrs-114b", "name": "Approaches to University Writing B" },
+        { "id": "afrs-115", "name": "Approaches to University Writing" },
+        { "id": "cas-113b", "name": "Approaches to University Writing B" },
+        { "id": "cas-114b", "name": "Approaches to University Writing B" },
+        { "id": "cas-115", "name": "Approaches to University Writing" },
+        { "id": "chs-113b", "name": "Approaches to University Writing B" },
+        { "id": "chs-114b", "name": "Approaches to University Writing B" },
+        { "id": "chs-115", "name": "Approaches to University Writing" },
+        { "id": "engl-113b", "name": "Approaches to University Writing B" },
+        { "id": "engl-114b", "name": "Approaches to University Writing B" },
+        { "id": "engl-115", "name": "Approaches to University Writing" },
+        { "id": "ling-113b", "name": "Approaches to University Writing B" },
+        { "id": "qs-113b", "name": "Approaches to University Writing B" },
+        { "id": "qs-114b", "name": "Approaches to University Writing B" },
+        { "id": "qs-115", "name": "Approaches to University Writing" }
+      ]
+    },
+    {
+      "name": "A3 - Critical Thinking",
+      "courses": [
+        { "id": "aas-201", "name": "Race, Racism and Critical Thinking" },
+        { "id": "afrs-204", "name": "Race and Critical Thinking" },
+        { "id": "chs-202", "name": "Race, Racism and Critical Thinking" },
+        { "id": "coms-225", "name": "Argumentation and Lab" },
+        {
+          "id": "engl-215",
+          "name": "Critical Thinking About Research Writing"
+        },
+        { "id": "phil-100", "name": "General Logic" },
+        { "id": "phil-200", "name": "Critical Reasoning" },
+        { "id": "phil-210", "name": "Reasoning in the Sciences" },
+        { "id": "phil-225", "name": "Evolutionary Reasoning" },
+        { "id": "phil-230", "name": "Introduction to Formal Logic" },
+        { "id": "rs-204", "name": "Religion, Logic and the Media" }
+      ]
+    },
+    {
+      "name": "B1 - Physical Science",
+      "courses": [
+        { "id": "astr-152", "name": "Elementary Astronomy" },
+        { "id": "astr-154", "name": "Elementary Astronomy" },
+        { "id": "chem-100", "name": "Principles of Chemistry" },
+        { "id": "chem-101", "name": "General Chemistry I" },
+        { "id": "chem-102", "name": "General Chemistry II" },
+        { "id": "chem-103", "name": "Introductory Chemistry I" },
+        { "id": "chem-104", "name": "Introductory Chemistry II" },
+        { "id": "chem-110", "name": "Chemistry in Action" },
+        { "id": "geog-101", "name": "The Physical Environment" },
+        { "id": "geog-101a", "name": "The Physical Environment" },
+        { "id": "geog-103", "name": "Weather" },
+        { "id": "geog-103a", "name": "Weather" },
+        { "id": "geog-111", "name": "Understanding Climate Change" },
+        { "id": "geol-101", "name": "Geology of Planet Earth" },
+        { "id": "geol-107", "name": "Geology Goes Hollywood" },
+        {
+          "id": "geol-110",
+          "name": "The Fossil Record of Ancient Life on Earth"
+        },
+        { "id": "geol-113", "name": "Earth and Life Through Time" },
+        { "id": "geol-117", "name": "Geological Disasters" },
+        { "id": "geol-122", "name": "The World Ocean" },
+        { "id": "phys-100a", "name": "General Physics I" },
+        { "id": "phys-100b", "name": "General Physics II" },
+        { "id": "phys-220a", "name": "Mechanics" },
+        { "id": "phys-220b", "name": "Electricity and Magnetism" },
+        { "id": "sci-111", "name": "Understanding Climate Change" },
+        { "id": "sust-111", "name": "Understanding Climate Change" }
+      ]
+    },
+    {
+      "name": "B2 - Life Science",
+      "courses": [
+        { "id": "anth-151", "name": "Introduction to Biological Anthropology" },
+        { "id": "biol-100", "name": "Introductory Biology" },
+        { "id": "biol-101", "name": "General Biology" },
+        { "id": "biol-106", "name": "Biological Principles I" },
+        { "id": "biol-107", "name": "Biological Principles II" },
+        { "id": "biol-218", "name": "Microbes and People" },
+        { "id": "biol-292", "name": "Wild SoCal" },
+        {
+          "id": "geol-110",
+          "name": "The Fossil Record of Ancient Life on Earth"
+        },
+        { "id": "geol-113", "name": "Earth and Life Through Time" }
+      ]
+    },
+    {
+      "name": "B3 - Science Laboratory Activity",
+      "courses": [
+        { "id": "astr-154l", "name": "Observational Astronomy Lab" },
+        { "id": "biol-100l", "name": "Introductory Biology Lab" },
+        { "id": "biol-101l", "name": "General Biology Lab" },
+        { "id": "biol-106l", "name": "Biological Principles I Lab" },
+        { "id": "biol-107l", "name": "Biological Principles II Lab" },
+        { "id": "biol-218l", "name": "Microbes and People Lab" },
+        {
+          "id": "biol-292l",
+          "name": "Field Studies in Biology \u00e2\u20ac\u201c Wild SoCal"
+        },
+        { "id": "chem-100l", "name": "Principles of Chemistry Lab" },
+        { "id": "chem-101l", "name": "General Chemistry I Lab" },
+        { "id": "chem-102l", "name": "General Chemistry II Lab" },
+        { "id": "chem-103l", "name": "Introductory Chemistry I Lab" },
+        { "id": "chem-104l", "name": "Introductory Chemistry II Lab" },
+        { "id": "chem-110l", "name": "Chemistry in Action Lab" },
+        { "id": "geog-101al", "name": "The Physical Environment Lab" },
+        { "id": "geog-103al", "name": "Weather Lab" },
+        { "id": "geog-111l", "name": "Understanding Climate Change Lab" },
+        { "id": "geol-102", "name": "Geology of Planet Earth Lab" },
+        { "id": "geol-107l", "name": "Geology Goes Hollywood Lab" },
+        { "id": "geol-112", "name": "Earth and Life Through Time Lab" },
+        { "id": "geol-117l", "name": "Geological Disasters Lab" },
+        { "id": "geol-123", "name": "World Ocean Lab" },
+        { "id": "phys-100al", "name": "General Physics I Lab" },
+        { "id": "phys-100bl", "name": "General Physics II Lab" },
+        { "id": "phys-220al", "name": "Mechanics Lab" },
+        { "id": "phys-220bl", "name": "Electricity and Magnetism Lab" },
+        { "id": "sci-111l", "name": "Understanding Climate Change Lab" },
+        { "id": "sust-111l", "name": "Understanding Climate Change Lab" }
+      ]
+    },
+    {
+      "name": "B4 - Mathematics and Quantitative Reasoning",
+      "courses": [
+        {
+          "id": "comp-102",
+          "name": "Programming for Data Applications and Lab"
+        },
+        { "id": "math-102", "name": "Pre-Calculus I" },
+        { "id": "math-103", "name": "Mathematical Methods for Business" },
+        { "id": "math-105", "name": "Pre-Calculus II" },
+        {
+          "id": "math-106",
+          "name": "Mathematical Foundations for Non-Calculus Physics"
+        },
+        { "id": "math-131", "name": "Mathematical Ideas" },
+        { "id": "math-140", "name": "Introductory Statistics" },
+        { "id": "math-140bus", "name": "Introductory Statistics for Business" },
+        { "id": "math-140sci", "name": "Introductory Statistics for STEM" },
+        { "id": "math-141", "name": "Essentials of Statistics and Lab" },
+        { "id": "math-150a", "name": "Calculus I" },
+        { "id": "math-255a", "name": "Calculus for the Life Sciences I" }
+      ]
+    },
+    {
+      "name": "B5 - Scientific Inquiry and Quantitative Reasoning",
+      "courses": [
+        {
+          "id": "anth-341",
+          "name": "Bones: An Introduction to the Study of Human Remains"
+        },
+        { "id": "astr-352", "name": "Current Developments in Astronomy" },
+        { "id": "biol-306", "name": "In the Light of Evolution" },
+        {
+          "id": "biol-323",
+          "name": "Plants and Animals of Southern California"
+        },
+        { "id": "biol-324", "name": "The World of the Dinosaurs" },
+        { "id": "biol-325", "name": "Life in the Sea" },
+        { "id": "biol-327", "name": "Ecology and People" },
+        { "id": "biol-341", "name": "Human Pregnancy and Embryology" },
+        { "id": "biol-362", "name": "Genetics and Society" },
+        { "id": "biol-366", "name": "Biology of Disease" },
+        {
+          "id": "biol-375",
+          "name": "Emerging Issues in Regenerative Medicine"
+        },
+        { "id": "cm-336", "name": "Fundamentals of Green Buildings and Lab" },
+        {
+          "id": "eoh-353",
+          "name": "Global Perspectives of Environmental Health"
+        },
+        { "id": "fcs-315", "name": "Issues in Housing" },
+        { "id": "fcs-323", "name": "Family and Individual Money Management" },
+        { "id": "fcs-324", "name": "Consumer Rights, Issues, and Problems" },
+        {
+          "id": "geh-333",
+          "name": "Interdisciplinary Inquiries: Ways of Knowing"
+        },
+        { "id": "geog-311", "name": "The Atmosphere" },
+        { "id": "geog-316", "name": "Environmental Geography" },
+        { "id": "geog-365", "name": "Geomorphology" },
+        { "id": "geog-366", "name": "Geography of Environmental Hazards" },
+        { "id": "geol-300", "name": "Environmental Geology" },
+        { "id": "geol-324", "name": "The World of the Dinosaurs" },
+        { "id": "geol-327", "name": "Geoforensics" },
+        { "id": "geol-344", "name": "California Geology" },
+        { "id": "hsci-336", "name": "Health Aspects of Drug Use" },
+        { "id": "hsci-337", "name": "Nutrition and Health" },
+        { "id": "hsci-345", "name": "Public Health Issues" },
+        { "id": "kin-309", "name": "Science and Technology in Sports" },
+        {
+          "id": "ling-303",
+          "name": "Human Language: Defining Our Biological Identity"
+        },
+        {
+          "id": "ling-310",
+          "name": "Forensic Linguistics: Language and the Law"
+        },
+        { "id": "math-331", "name": "Mathematical Explorations" },
+        { "id": "mse-303", "name": "Innovation, Invention and Technology" },
+        { "id": "phys-305", "name": "Physics of Music" },
+        { "id": "phys-331", "name": "Physics of Sports" },
+        { "id": "qs-369", "name": "The Nature of Queer" },
+        { "id": "rs-366", "name": "Science and Religion" }
+      ]
+    },
+    {
+      "name": "C1 - Arts",
+      "courses": [
+        { "id": "afrs-246", "name": "Introduction to African-American Drama" },
+        {
+          "id": "afrs-280",
+          "name": "Workshop in Creative Writing for Minority Students"
+        },
+        { "id": "anth-232", "name": "Expressive Culture" },
+        { "id": "art-100", "name": "Introduction to Art Processes and Lab" },
+        { "id": "art-110", "name": "World Arts: The Western Tradition" },
+        { "id": "art-114", "name": "World Arts: Asia" },
+        { "id": "art-124a", "name": "Drawing I" },
+        { "id": "art-140", "name": "Beginning Two-Dimensional Design" },
+        { "id": "art-141", "name": "Beginning Three-Dimensional Design" },
+        { "id": "art-305", "name": "Art and Mass Culture" },
+        { "id": "chs-111", "name": "The Chicana/o and the Arts" },
+        { "id": "chs-310", "name": "Regional Music of Mexico" },
+        { "id": "coms-104", "name": "Literature in Performance and Lab" },
+        { "id": "ctva-210", "name": "Television-Film Aesthetics" },
+        { "id": "ctva-309", "name": "Film as Literature" },
+        { "id": "engl-208", "name": "Creative Writing" },
+        {
+          "id": "flit-151",
+          "name": "Introduction to Modern Chinese Culture and Literature"
+        },
+        { "id": "flit-250", "name": "Traditional Culture of Japan" },
+        { "id": "hum-101", "name": "Forms and Ideas in Humanities" },
+        { "id": "hum-105", "name": "Cultural Eras in Humanities I" },
+        { "id": "hum-106", "name": "Cultural Eras in Humanities II" },
+        {
+          "id": "js-300",
+          "name": "Ancient and Medieval Jewish Arts and Literature"
+        },
+        { "id": "kin-139a", "name": "Ballet I" },
+        { "id": "kin-144a", "name": "Dance, Modern I" },
+        { "id": "kin-236", "name": "Introduction to Choreography Lab" },
+        { "id": "kin-380", "name": "Perspectives of Dance and Lab" },
+        { "id": "ling-240", "name": "Language and Music" },
+        { "id": "mus-105", "name": "Understanding Music" },
+        { "id": "mus-106hh", "name": "Hip Hop Music" },
+        { "id": "mus-107", "name": "Music Today" },
+        { "id": "mus-108", "name": "Music in Film" },
+        { "id": "mus-306", "name": "Introduction to Jazz" },
+        {
+          "id": "th-110",
+          "name": "Introduction to Theatre: Text/Drama/Performance"
+        },
+        { "id": "th-111", "name": "Actors and Acting" },
+        { "id": "th-310", "name": "Theatre in Performance" }
+      ]
+    },
+    {
+      "name": "C2 - Humanities",
+      "courses": [
+        { "id": "aas-220", "name": "Survey of Asian American Literature" },
+        { "id": "aas-321", "name": "Asian American Fiction" },
+        { "id": "afrs-245", "name": "African-American Literature Since 1930" },
+        {
+          "id": "afrs-344",
+          "name": "Literature of the Caribbean and African Experience"
+        },
+        { "id": "afrs-346", "name": "Contemporary Black Female Writers" },
+        { "id": "anth-222", "name": "Visions of the Sacred" },
+        { "id": "anth-326", "name": "Introduction to Folklore" },
+        { "id": "cas-201", "name": "Survey of Central American Literature" },
+        {
+          "id": "chs-201",
+          "name": "Survey of Mexican Literature in Translation"
+        },
+        {
+          "id": "chs-350",
+          "name": "Religions and Spiritualities in Chicana/o Communities"
+        },
+        { "id": "chs-351", "name": "Survey of Mexican Philosophical Thought" },
+        { "id": "chs-380", "name": "Chicana/o Literature" },
+        { "id": "chs-381", "name": "Contemporary Chicana Literature" },
+        { "id": "clas-315", "name": "Greek and Roman Mythology" },
+        { "id": "engl-254", "name": "Popular Literary Genres" },
+        { "id": "engl-255", "name": "Introduction to Literature" },
+        { "id": "engl-258", "name": "Major English Writers I" },
+        { "id": "engl-259", "name": "Major English Writers II" },
+        { "id": "engl-275", "name": "Major American Writers" },
+        { "id": "engl-300", "name": "Contemporary Literature" },
+        { "id": "engl-316", "name": "Shakespeare" },
+        { "id": "engl-333", "name": "Comics and Graphic Novels" },
+        { "id": "engl-364", "name": "The Short Story" },
+        {
+          "id": "flit-151",
+          "name": "Introduction to Modern Chinese Culture and Literature"
+        },
+        { "id": "flit-295a", "name": "Masterpieces of European Literature I" },
+        {
+          "id": "flit-331",
+          "name": "Literary Masterpieces of Italian Humanism and Renaissance Literature"
+        },
+        {
+          "id": "flit-381",
+          "name": "Aspects of the Italian-American Experience in Cinema, Literature, Philosophy and Music"
+        },
+        {
+          "id": "gws-100",
+          "name": "Introduction to Gender and Women\u00e2\u20ac\u2122s Studies"
+        },
+        { "id": "gws-230", "name": "Women and Entertainment" },
+        { "id": "gws-351", "name": "Gender, Race, Class and Sexuality" },
+        { "id": "hist-150", "name": "Western Civilization to 1500" },
+        { "id": "hist-151", "name": "Western Civilization Since 1500" },
+        {
+          "id": "hist-303",
+          "name": "Themes in Western Civilization Before 1500"
+        },
+        {
+          "id": "hist-304",
+          "name": "Themes in Western Civilization After 1500"
+        },
+        { "id": "hum-101", "name": "Forms and Ideas in Humanities" },
+        { "id": "hum-105", "name": "Cultural Eras in Humanities I" },
+        { "id": "hum-106", "name": "Cultural Eras in Humanities II" },
+        { "id": "js-200", "name": "Jewish Religion and Culture" },
+        {
+          "id": "js-300",
+          "name": "Ancient and Medieval Jewish Arts and Literature"
+        },
+        { "id": "ling-200", "name": "(How) Language Matters" },
+        { "id": "phil-150", "name": "Introduction to Philosophical Thought" },
+        { "id": "phil-165", "name": "Today\u00e2\u20ac\u2122s Moral Issues" },
+        { "id": "phil-170", "name": "Philosophy and Popular Culture" },
+        { "id": "phil-201", "name": "Ancient Philosophy" },
+        { "id": "phil-202", "name": "Modern Philosophy" },
+        { "id": "phil-240", "name": "Environmental Ethics" },
+        { "id": "phil-250", "name": "Philosophy of Technology" },
+        { "id": "phil-310", "name": "Philosophical Problems" },
+        { "id": "phil-325", "name": "Philosophy and Biology" },
+        { "id": "phil-330", "name": "Philosophy of Science" },
+        { "id": "phil-337", "name": "Philosophy of Religion" },
+        {
+          "id": "phil-349",
+          "name": "Contemporary Social and Political Issues"
+        },
+        { "id": "phil-353", "name": "Existentialism" },
+        { "id": "phil-354", "name": "Kierkegaard and Nietzsche" },
+        { "id": "rs-100", "name": "Introduction to Religious Studies" },
+        { "id": "rs-101", "name": "The Bible" },
+        { "id": "rs-304", "name": "Women and Religion" },
+        { "id": "rs-307", "name": "Religion in America" },
+        { "id": "rs-310", "name": "Religion and Literature" },
+        { "id": "rs-356", "name": "Contemporary Religious Thought" },
+        { "id": "rs-361", "name": "Contemporary Ethical Issues" },
+        { "id": "rs-362", "name": "Race, Power, Religion" },
+        { "id": "rs-370", "name": "Religion and Ecology" },
+        { "id": "sust-240", "name": "Environmental Ethics" },
+        { "id": "th-333", "name": "The American Musical" }
+      ]
+    },
+    {
+      "name": "C3 (CHIST) - American History, Institutions and Ideals",
+      "courses": [
+        { "id": "afrs-271", "name": "African-American History to 1865" },
+        { "id": "afrs-272", "name": "African-American History Since 1865" },
+        { "id": "chs-245", "name": "History of the Americas" },
+        { "id": "econ-175", "name": "Introduction to U.S. Economic History" },
+        { "id": "hist-270", "name": "The United States to 1865" },
+        { "id": "hist-271", "name": "The United States Since 1865" },
+        {
+          "id": "hist-370",
+          "name": "Questions in American History to the Civil War"
+        },
+        {
+          "id": "hist-371",
+          "name": "Questions in American History Since the Civil War"
+        },
+        { "id": "phil-317", "name": "History of American Philosophy" },
+        { "id": "rs-256", "name": "American Religious History and Ideals" }
+      ]
+    },
+    {
+      "name": "D1 - Social Sciences",
+      "courses": [
+        { "id": "aas-210", "name": "History of Asians in America" },
+        {
+          "id": "aas-350",
+          "name": "Asian American Personality and Mental Health"
+        },
+        {
+          "id": "afrs-201",
+          "name": "Economics of the African-American Community I"
+        },
+        {
+          "id": "afrs-220",
+          "name": "Psychological Environment of the African-American"
+        },
+        {
+          "id": "afrs-221",
+          "name": "Social Environment of the African-American"
+        },
+        { "id": "afrs-361", "name": "African-American Politics" },
+        {
+          "id": "ais-222",
+          "name": "Gender, Sexuality, and American Indian Communities"
+        },
+        {
+          "id": "anth-150",
+          "name": "The Human Adventure: Introduction to Anthropology"
+        },
+        { "id": "anth-151", "name": "Introduction to Biological Anthropology" },
+        { "id": "anth-152", "name": "Introduction to Cultural Anthropology" },
+        {
+          "id": "anth-153",
+          "name": "Temples, Tombs and Treasures? An Introduction to Archaeology"
+        },
+        { "id": "anth-212", "name": "Anthropology of Sex" },
+        { "id": "anth-250", "name": "Archaeology of Warfare" },
+        { "id": "anth-262", "name": "Forensic Anthropology" },
+        { "id": "anth-302", "name": "Introduction to Applied Anthropology" },
+        { "id": "anth-305", "name": "Individual and Culture" },
+        { "id": "anth-319", "name": "World Prehistory" },
+        {
+          "id": "anth-341",
+          "name": "Bones: An Introduction to the Study of Human Remains"
+        },
+        {
+          "id": "cadv-150",
+          "name": "Foundations of Child and Adolescent Development"
+        },
+        {
+          "id": "cas-309",
+          "name": "Ancient to Pre-Modern History of the Central American People"
+        },
+        {
+          "id": "cas-310",
+          "name": "Modern History of the Central American People"
+        },
+        { "id": "cas-368", "name": "Central American Revolutionary Movements" },
+        {
+          "id": "cas-369",
+          "name": "Contemporary Social Movements in Central America"
+        },
+        { "id": "chs-261", "name": "Race, Racism and the Sciences" },
+        { "id": "chs-345", "name": "History of the Mexican Peoples" },
+        { "id": "chs-346", "name": "History of the Chicana/Mexicana" },
+        { "id": "chs-361", "name": "Urbanization and the Chicana/o" },
+        { "id": "chs-366", "name": "Women in Latin America" },
+        { "id": "coms-312", "name": "Health Communication" },
+        { "id": "econ-101", "name": "Economics for Everyday Life" },
+        {
+          "id": "econ-156",
+          "name": "Introduction to Economic Analysis and Policy"
+        },
+        { "id": "econ-160", "name": "Principles of Microeconomics" },
+        { "id": "econ-161", "name": "Principles of Macroeconomics" },
+        { "id": "econ-310", "name": "Price Theory and Applications" },
+        { "id": "econ-311", "name": "Money, Banking and the Federal Reserve" },
+        { "id": "econ-360", "name": "Environmental Economics" },
+        { "id": "fcs-256", "name": "Global Fashion Production" },
+        { "id": "fcs-340", "name": "Marriage and Family Relations" },
+        { "id": "fcs-357", "name": "Apparel and Human Behavior" },
+        { "id": "flit-325", "name": "Social Issues in Modern China" },
+        {
+          "id": "geh-333",
+          "name": "Interdisciplinary Inquiries: Ways of Knowing"
+        },
+        { "id": "geog-107", "name": "Introduction to Human Geography" },
+        { "id": "geog-150", "name": "World Geography" },
+        { "id": "geog-170", "name": "Water Resources of California" },
+        { "id": "geog-301", "name": "Cultural Geography" },
+        { "id": "geog-321", "name": "United States" },
+        { "id": "geog-330", "name": "California" },
+        { "id": "geog-350", "name": "Metropolitan Los Angeles" },
+        { "id": "geog-351", "name": "Urban Geography" },
+        { "id": "geog-370", "name": "Water, Society, and the Environment" },
+        { "id": "gws-110", "name": "Women, Work, and Family" },
+        { "id": "gws-220", "name": "Men, Masculinity and Patriarchy" },
+        {
+          "id": "gws-222",
+          "name": "Gender, Sexuality, and American Indian Communities"
+        },
+        { "id": "gws-300", "name": "Women as Agents of Change" },
+        { "id": "gws-320", "name": "Women and Urban Life/Urban Space" },
+        { "id": "gws-340", "name": "Women, Gender and Global Development" },
+        { "id": "gws-351", "name": "Gender, Race, Class and Sexuality" },
+        { "id": "gws-370", "name": "Women and Violence" },
+        { "id": "hhd-185", "name": "Public Health for Social Justice" },
+        { "id": "hist-110", "name": "World History to 1500" },
+        { "id": "hist-111", "name": "World History Since 1500" },
+        { "id": "hist-305", "name": "Cultural History of the United States" },
+        {
+          "id": "hist-341",
+          "name": "Modern Europe Since the French Revolution"
+        },
+        { "id": "hist-342", "name": "The World Since 1945" },
+        { "id": "hist-350", "name": "History of Women" },
+        { "id": "hist-380", "name": "Los Angeles: Past, Present, Future" },
+        { "id": "hist-389", "name": "Disability in American History and Law" },
+        {
+          "id": "hsci-132",
+          "name": "History of Preventive Medicine and Public Health"
+        },
+        { "id": "hsci-345", "name": "Public Health Issues" },
+        {
+          "id": "hsci-369",
+          "name": "Public Health Strategies in HIV and STI Prevention"
+        },
+        { "id": "jour-365", "name": "News Literacy" },
+        { "id": "js-318", "name": "Applied Jewish Ethics" },
+        {
+          "id": "ling-230",
+          "name": "Forbidden Language: Swearing and Taboo Language"
+        },
+        { "id": "ling-309", "name": "Language and Social Interaction" },
+        { "id": "mkt-350", "name": "Consumer Information in the Digital Age" },
+        { "id": "pols-156", "name": "Introduction to Comparative Politics" },
+        { "id": "pols-225", "name": "Elements of International Relations" },
+        { "id": "pols-310", "name": "Problems of Political Economy" },
+        { "id": "pols-350", "name": "Great Questions in Politics" },
+        { "id": "pols-380", "name": "Los Angeles: Past, Present, Future" },
+        { "id": "psy-150", "name": "Introduction to Psychology" },
+        { "id": "psy-312", "name": "Psychological Aspects of Parenthood" },
+        { "id": "psy-352", "name": "Motivation" },
+        { "id": "psy-365", "name": "Introduction to Gerontology" },
+        { "id": "rs-240", "name": "Approaches to the History of Religions" },
+        { "id": "soc-150", "name": "Introductory Sociology" },
+        { "id": "soc-200", "name": "Social Crises of Today" },
+        { "id": "soc-305", "name": "Culture and Personality" },
+        { "id": "soc-324", "name": "Sociology of Sex and Gender" },
+        {
+          "id": "sust-300",
+          "name": "Interdisciplinary Perspectives on Sustainability"
+        },
+        { "id": "urbs-150", "name": "Discover the City" },
+        {
+          "id": "urbs-310",
+          "name": "Growth and Sustainable Development of Cities"
+        },
+        { "id": "urbs-380", "name": "Los Angeles: Past, Present, Future" }
+      ]
+    },
+    {
+      "name": "D3/D4 (DGVT) - Constitution of the United States/State and Local Government",
+      "courses": [
+        { "id": "aas-347", "name": "Asian American Politics and the Law" },
+        {
+          "id": "afrs-161",
+          "name": "American Political Institutions: A Black Perspective"
+        },
+        { "id": "chs-260", "name": "Constitutional Issues and the Chicana/o" },
+        { "id": "chs-445", "name": "History of the Chicano" },
+        { "id": "pols-155", "name": "American Political Institutions" },
+        {
+          "id": "pols-355",
+          "name": "American National, State and Local Governments"
+        },
+        {
+          "id": "rs-255",
+          "name": "American Political Institutions and Religion"
+        }
+      ]
+    },
+    {
+      "name": "D4 - California State and Local Government",
+      "courses": [
+        { "id": "pols-403", "name": "State and Local Government" },
+        {
+          "id": "pols-490ca",
+          "name": "Supervised Individual Project\u00e2\u20ac\u201dCalifornia Government"
+        }
+      ]
+    },
+    {
+      "name": "E - Lifelong Learning",
+      "courses": [
+        { "id": "aas-230", "name": "Asian Americans and the Media" },
+        {
+          "id": "aas-390",
+          "name": "Asian American Communities: Field Practicum"
+        },
+        { "id": "afrs-337", "name": "Black Images on the Silver Screen" },
+        { "id": "ais-301", "name": "American Indians and Popular Culture" },
+        { "id": "art-151", "name": "Photography as Art" },
+        { "id": "art-201", "name": "Introduction to Web Art" },
+        { "id": "biol-327", "name": "Ecology and People" },
+        {
+          "id": "biol-375",
+          "name": "Emerging Issues in Regenerative Medicine"
+        },
+        { "id": "blaw-108", "name": "The Citizen and Civil Law" },
+        { "id": "blaw-280", "name": "Business Law I" },
+        { "id": "blaw-368", "name": "Law, Business and Ethics" },
+        { "id": "bus-104", "name": "Introduction to Business" },
+        {
+          "id": "cadv-310",
+          "name": "Developmental Impacts of Abuse and Neglect"
+        },
+        {
+          "id": "cas-270",
+          "name": "Fieldwork in Central American Communities"
+        },
+        {
+          "id": "cce-200",
+          "name": "Introduction to Civic and Community Engagement"
+        },
+        { "id": "cd-133", "name": "Survey of Communication Disorders" },
+        { "id": "cd-361", "name": "Language Development in Children" },
+        { "id": "chs-270soc", "name": "Fieldwork in Barrio Studies" },
+        {
+          "id": "chs-360",
+          "name": "Political Organizations and Social Movements of the Barrio"
+        },
+        { "id": "chs-390", "name": "Alternative Chicano Press" },
+        { "id": "cjs-340", "name": "Ethics in Criminal Justice" },
+        { "id": "cm-336", "name": "Fundamentals of Green Buildings and Lab" },
+        { "id": "comp-100", "name": "Computers: Their Impact and Use" },
+        { "id": "comp-300", "name": "Computer Fluency" },
+        { "id": "coms-150", "name": "Introduction to Communication Studies" },
+        {
+          "id": "coms-251",
+          "name": "Introduction to Interpersonal Communication"
+        },
+        { "id": "coms-323", "name": "Group Communication" },
+        { "id": "coms-360", "name": "Communication and the Sexes" },
+        { "id": "ctva-100", "name": "Introduction to Mass Communication Arts" },
+        { "id": "engl-253", "name": "Bestselling Literature" },
+        { "id": "engl-306", "name": "Report Writing" },
+        { "id": "engl-313", "name": "Studies in Popular Culture" },
+        { "id": "engl-315", "name": "Digital Writing" },
+        { "id": "eoh-101", "name": "Introduction to Environmental Health" },
+        {
+          "id": "eoh-353",
+          "name": "Global Perspectives of Environmental Health"
+        },
+        { "id": "fcs-207", "name": "Nutrition for Life" },
+        { "id": "fcs-315", "name": "Issues in Housing" },
+        { "id": "fcs-323", "name": "Family and Individual Money Management" },
+        { "id": "fcs-324", "name": "Consumer Rights, Issues, and Problems" },
+        { "id": "fcs-330", "name": "Child Growth and Development I" },
+        { "id": "fcs-340", "name": "Marriage and Family Relations" },
+        { "id": "fin-102", "name": "Financial Literacy" },
+        { "id": "fin-302", "name": "Personal Finance" },
+        { "id": "flit-234", "name": "Virtual Study Abroad" },
+        { "id": "geog-108", "name": "Earth From Above" },
+        {
+          "id": "geog-206",
+          "name": "Introduction to Geographical Information Science and Lab"
+        },
+        { "id": "geol-104", "name": "Living with Earthquakes in California" },
+        {
+          "id": "gws-305",
+          "name": "Gender and Women\u00e2\u20ac\u2122s Studies Community Service"
+        },
+        { "id": "hist-366", "name": "Popular Culture in Latin America" },
+        { "id": "hsci-131", "name": "Health and Society" },
+        { "id": "hsci-170", "name": "Emergency Health Procedures" },
+        { "id": "hsci-231", "name": "Women and Health" },
+        { "id": "hsci-336", "name": "Health Aspects of Drug Use" },
+        { "id": "hsci-337", "name": "Nutrition and Health" },
+        { "id": "is-212", "name": "Information Systems for Business Users" },
+        { "id": "jour-100", "name": "Mass Communication" },
+        { "id": "jour-390", "name": "Freedom of the Press" },
+        {
+          "id": "js-390cs",
+          "name": "Nonprofit Internship in the Jewish Community"
+        },
+        { "id": "kin-115a", "name": "Adapted and Therapeutic Exercise" },
+        { "id": "kin-117", "name": "Adapted Aquatic Exercise" },
+        { "id": "kin-118", "name": "Adapted Self-Defense" },
+        { "id": "kin-123a", "name": "Archery" },
+        { "id": "kin-124a", "name": "Basketball I" },
+        { "id": "kin-125a", "name": "Fitness for Life" },
+        { "id": "kin-126a", "name": "Strength Training" },
+        { "id": "kin-128", "name": "Fitness Walking" },
+        { "id": "kin-129a", "name": "Running Conditioning I" },
+        { "id": "kin-130a", "name": "Karate I" },
+        { "id": "kin-131a", "name": "Taekwondo" },
+        { "id": "kin-132a", "name": "Aikido" },
+        { "id": "kin-133a", "name": "Tai Chi Ch\u00e2\u20ac\u2122uan" },
+        { "id": "kin-135a", "name": "Aerobic Dance I" },
+        { "id": "kin-142b", "name": "Dance, Latin Dance II" },
+        { "id": "kin-147", "name": "Pilates" },
+        { "id": "kin-148", "name": "Dance Conditioning and Somatic Practices" },
+        { "id": "kin-149", "name": "Yoga" },
+        { "id": "kin-152a", "name": "Soccer I" },
+        { "id": "kin-153", "name": "Sexual Assault Defense for Women" },
+        { "id": "kin-154", "name": "Sexual Assault Defense for Men" },
+        { "id": "kin-172", "name": "Ultimate Frisbee" },
+        { "id": "kin-177a", "name": "Swimming for Non-swimmers" },
+        { "id": "kin-178a", "name": "Swimming I" },
+        { "id": "kin-179a", "name": "Swimming Conditioning" },
+        { "id": "kin-185a", "name": "Tennis I" },
+        { "id": "kin-195a", "name": "Volleyball I" },
+        { "id": "kin-195s", "name": "Sand Volleyball" },
+        {
+          "id": "ling-310",
+          "name": "Forensic Linguistics: Language and the Law"
+        },
+        { "id": "mse-303", "name": "Innovation, Invention and Technology" },
+        { "id": "phil-180", "name": "Human Nature and the Meaning of Life" },
+        { "id": "phil-250", "name": "Philosophy of Technology" },
+        { "id": "phil-305", "name": "Business Ethics and Public Policy" },
+        { "id": "phil-337", "name": "Philosophy of Religion" },
+        {
+          "id": "qs-302",
+          "name": "L.A. in Transit: Communities, Organizations and Politics"
+        },
+        { "id": "rtm-251", "name": "Recreation and the Natural Environment" },
+        {
+          "id": "rtm-278",
+          "name": "Recreation and Leisure in Contemporary Society"
+        },
+        {
+          "id": "rtm-310",
+          "name": "Adventure Recreation and Human Relations and Lab"
+        },
+        { "id": "rtm-352", "name": "Play and Human Potential" },
+        {
+          "id": "rtm-353",
+          "name": "Literature of the Wilderness Experience and Lab"
+        },
+        { "id": "sci-100", "name": "Science for Life" },
+        { "id": "sust-310", "name": "Best Practices in Sustainability" },
+        { "id": "univ-100", "name": "Freshman Seminar" }
+      ]
+    },
+    {
+      "name": "F - Comparative Cultural Studies",
+      "courses": [
+        { "id": "aas-100", "name": "Introduction to Asian American Studies" },
+        { "id": "aas-340", "name": "Asian American Women" },
+        {
+          "id": "aas-345",
+          "name": "Contemporary Issues in Asian American Studies"
+        },
+        {
+          "id": "aas-360",
+          "name": "Asian American Immigration\u00e2\u20ac\u201cGlobal Perspective"
+        },
+        {
+          "id": "afrs-100",
+          "name": "Introduction to Black Studies and Culture"
+        },
+        { "id": "afrs-165", "name": "Introduction to Pan Africanism" },
+        { "id": "afrs-226", "name": "Traditional African Cultures" },
+        {
+          "id": "afrs-300",
+          "name": "Contemporary Issues in the African-American Community"
+        },
+        {
+          "id": "afrs-320",
+          "name": "African-American Personality Development"
+        },
+        { "id": "afrs-322", "name": "African-American Family" },
+        { "id": "afrs-324", "name": "The Black Woman in Contemporary Times" },
+        { "id": "afrs-325", "name": "The Black Man in Contemporary Times" },
+        { "id": "afrs-366", "name": "Colonialism in Africa" },
+        { "id": "ais-101", "name": "Introduction to American Indian Studies" },
+        { "id": "ais-304", "name": "American Indian Law and Policy" },
+        { "id": "ais-333", "name": "American Indian Philosophy" },
+        { "id": "anth-108", "name": "Latin American Cultures" },
+        { "id": "anth-308", "name": "Gender and Culture" },
+        {
+          "id": "anth-310",
+          "name": "Language in Culture: Anthropological Linguistics"
+        },
+        { "id": "anth-315", "name": "World Cultures and Societies" },
+        {
+          "id": "anth-345",
+          "name": "Anthropology of the Contemporary United States"
+        },
+        { "id": "arab-101", "name": "Elementary Arabic I" },
+        { "id": "arab-102", "name": "Elementary Arabic II" },
+        { "id": "armn-101", "name": "Elementary Armenian I" },
+        { "id": "armn-102", "name": "Elementary Armenian II" },
+        { "id": "armn-310", "name": "Armenian Culture" },
+        { "id": "armn-360", "name": "Changing Roles of Armenian Women" },
+        {
+          "id": "art-112",
+          "name": "World Arts: Africa, Oceania and the Americas"
+        },
+        { "id": "art-315", "name": "World Perspectives in Art History" },
+        { "id": "blaw-391", "name": "Women and the Law" },
+        { "id": "cas-100", "name": "Introduction to Central American Studies" },
+        { "id": "cas-102", "name": "The Salvadoran Experience" },
+        { "id": "cas-311", "name": "The Central American Diaspora" },
+        { "id": "cas-365", "name": "Changing Roles of Central American Women" },
+        { "id": "chin-101", "name": "Elementary Mandarin Chinese I" },
+        { "id": "chin-102", "name": "Elementary Mandarin Chinese II" },
+        { "id": "chin-201", "name": "Intermediate Mandarin Chinese I" },
+        { "id": "chin-202", "name": "Intermediate Mandarin Chinese II" },
+        { "id": "chs-100", "name": "Chicana/o Culture" },
+        { "id": "chs-101", "name": "Spanish for Chicanos I" },
+        { "id": "chs-246", "name": "Contemporary Issues of the Chicana" },
+        {
+          "id": "chs-333",
+          "name": "Language and Society: Chicanas/os and Other Language Minority Children"
+        },
+        { "id": "chs-364", "name": "World Migration and the Chicana/o" },
+        { "id": "chs-365", "name": "Third World Women and the Chicana" },
+        { "id": "clas-101l", "name": "Elementary Latin I" },
+        { "id": "coms-356", "name": "Intercultural Communication" },
+        { "id": "engl-311", "name": "History of African-American Writing" },
+        { "id": "engl-371", "name": "Issues in Jewish-American Writing" },
+        {
+          "id": "flit-150",
+          "name": "Gateways to Western Civilization: Greece and Rome"
+        },
+        { "id": "flit-370", "name": "Modern Japanese Culture" },
+        { "id": "flit-371", "name": "Modern Italian Culture" },
+        {
+          "id": "flit-380",
+          "name": "Cultural Development of Modern Russia and Eastern Europe"
+        },
+        { "id": "fren-101", "name": "Elementary French I" },
+        { "id": "fren-102", "name": "Elementary French II" },
+        { "id": "geog-318", "name": "Europe" },
+        { "id": "geog-322", "name": "Latin America" },
+        { "id": "geog-324", "name": "China" },
+        { "id": "geog-326", "name": "Africa" },
+        { "id": "geog-334", "name": "Geography of Oceania" },
+        {
+          "id": "gws-100",
+          "name": "Introduction to Gender and Women\u00e2\u20ac\u2122s Studies"
+        },
+        { "id": "gws-110", "name": "Women, Work, and Family" },
+        { "id": "gws-300", "name": "Women as Agents of Change" },
+        { "id": "gws-351", "name": "Gender, Race, Class and Sexuality" },
+        { "id": "hebr-101", "name": "Elementary Hebrew I" },
+        { "id": "hebr-102", "name": "Elementary Hebrew II" },
+        {
+          "id": "hist-161",
+          "name": "The History of Latin America from Pre-Columbian Times to Today"
+        },
+        { "id": "hist-185", "name": "Middle East from 600CE to the Present" },
+        { "id": "hist-192", "name": "History of Modern East Asia" },
+        { "id": "hist-210", "name": "A History of the Jewish People" },
+        { "id": "hist-349a", "name": "American Women I" },
+        { "id": "hist-349b", "name": "Women in American History Since 1848" },
+        { "id": "hist-369", "name": "Native Peoples and Cultures" },
+        { "id": "ital-101", "name": "Elementary Italian I" },
+        { "id": "ital-102", "name": "Elementary Italian II" },
+        { "id": "ital-201", "name": "Intermediate Italian I" },
+        { "id": "ital-202", "name": "Intermediate Italian II" },
+        { "id": "japn-101", "name": "Elementary Japanese I" },
+        { "id": "japn-102", "name": "Elementary Japanese II" },
+        { "id": "japn-201", "name": "Intermediate Japanese I" },
+        { "id": "japn-202", "name": "Intermediate Japanese II" },
+        { "id": "japn-204", "name": "Kanji II" },
+        { "id": "jour-371", "name": "Gender and Media" },
+        { "id": "jour-372", "name": "Diversity and the Media" },
+        { "id": "js-210", "name": "History of the Jewish People" },
+        {
+          "id": "js-306",
+          "name": "Sociology of Jewish Families and Communities"
+        },
+        { "id": "js-330", "name": "Women in the Jewish Experience" },
+        { "id": "js-335", "name": "Jewish Identity in the U.S." },
+        { "id": "kin-385", "name": "Women in Sport" },
+        { "id": "kor-101", "name": "Elementary Korean I" },
+        { "id": "kor-102", "name": "Elementary Korean II" },
+        { "id": "kor-201", "name": "Intermediate Korean I" },
+        { "id": "kor-202", "name": "Intermediate Korean II" },
+        { "id": "ling-250", "name": "Language(s) in California" },
+        { "id": "ling-325", "name": "Language, Gender, and Identity" },
+        {
+          "id": "mse-302",
+          "name": "Women in Mathematics, Science and Engineering"
+        },
+        { "id": "mus-309", "name": "Traditional Music of the U.S." },
+        {
+          "id": "mus-310",
+          "name": "Understanding World Cultures Through Music"
+        },
+        { "id": "pers-101", "name": "Elementary Persian I" },
+        { "id": "pers-102", "name": "Elementary Persian II" },
+        { "id": "pers-201", "name": "Intermediate Persian I" },
+        { "id": "phil-333", "name": "American Indian Philosophy" },
+        { "id": "phil-343", "name": "Indian Philosophy" },
+        { "id": "phil-344", "name": "Chinese Philosophy" },
+        { "id": "phil-348", "name": "Philosophy and Feminism" },
+        { "id": "pols-197", "name": "Racial and Ethnic Politics" },
+        { "id": "pols-321", "name": "Comparative Political Ideologies" },
+        { "id": "pols-332", "name": "Politics of Latin America" },
+        { "id": "qs-208", "name": "Issues in Queer Health" },
+        { "id": "qs-301", "name": "Perspectives in Queer Studies" },
+        {
+          "id": "qs-304",
+          "name": "Queering the Screen, Queering the Spectator"
+        },
+        { "id": "rs-150", "name": "World Religions" },
+        { "id": "rs-306", "name": "American Religious Diversity" },
+        { "id": "rs-365", "name": "Islam" },
+        { "id": "rs-378", "name": "American Jewish Experience" },
+        {
+          "id": "rs-380",
+          "name": "Asian Religions: Communal Traditions and Transitions"
+        },
+        { "id": "rs-385", "name": "Hinduism" },
+        { "id": "rs-390", "name": "Buddhism" },
+        {
+          "id": "rtm-310",
+          "name": "Adventure Recreation and Human Relations and Lab"
+        },
+        {
+          "id": "rtm-330",
+          "name": "Women, Leisure and Ethnicity in the United States"
+        },
+        { "id": "russ-101", "name": "Elementary Russian I" },
+        { "id": "russ-102", "name": "Elementary Russian II" },
+        { "id": "russ-200", "name": "Beginning Russian Conversation" },
+        { "id": "russ-201", "name": "Intermediate Russian" },
+        { "id": "russ-202", "name": "Intermediate Russian Reading" },
+        {
+          "id": "soc-306",
+          "name": "Sociology of Jewish Families and Communities"
+        },
+        { "id": "soc-307", "name": "Ethnic Diversity in America" },
+        { "id": "soc-335", "name": "Jewish Identity in the U.S." },
+        { "id": "span-101", "name": "Elementary Spanish I" },
+        { "id": "span-102", "name": "Elementary Spanish II" },
+        { "id": "span-103", "name": "Elementary Written Spanish I" },
+        { "id": "span-220a", "name": "Intermediate Spanish I" },
+        { "id": "span-220b", "name": "Intermediate Spanish II" },
+        { "id": "sped-200sl", "name": "Introduction to Disability Studies" },
+        { "id": "th-325", "name": "World Drama and Performance" },
+        { "id": "urbs-350", "name": "Cities of the Developing World" }
+      ]
+    }
+  ]
+}
