@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 import { selectStatus } from "./reducers/profileSlice";
 import logo from "./CSUNorthridgelogo.svg";
 import { Footer } from "./components/footer";
+import { Class } from "./routes/class";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
                   <Route path="search" element={<Search />} />
                   <Route path="wishlist" element={<Wishlist />} />
                   <Route path="courseView" element={<CourseView />} />
+                  <Route path="class/:id" element={<Class />} />
                 </>
               )}
               <Route
