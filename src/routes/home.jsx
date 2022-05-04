@@ -1,4 +1,4 @@
-import { selectStatus, login, logout } from "../reducers/profileSlice";
+import { selectStatus, login, logout, selectMainSubject } from "../reducers/profileSlice";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -11,18 +11,20 @@ import Login from "../components/login";
 
 import Signup from "../components/Signup";
 import Search from "./search";
-import { addGEClass } from "../reducers/classesSlice";
-import { getGEClasses } from "../api/utils";
+import { addGEClass, addMainSubjectClass } from "../reducers/classesSlice";
+import { getClasses, getGEClasses } from "../api/utils";
 
 const Home = () => {
   const status = useSelector(selectStatus);
   const dispatch = useDispatch();
-
+  const mainSubject = useSelector(selectMainSubject);
+  // let mainSubject = "comp";
   useEffect(()=>{
     if(status==='logged-in'){
       getGEClasses().then(response =>  dispatch(addGEClass({ge:response})));
+      getClasses(mainSubject).then(response=>dispatch(addMainSubjectClass({mainSubject:response})));
     }
-  }, [status,dispatch])
+  }, [mainSubject,status,dispatch])
 
 
   useEffect(() => {
