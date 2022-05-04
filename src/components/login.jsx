@@ -69,18 +69,15 @@ const Login = () => {
         passwordState={passwordState}
         buttonType="manual"
       />
-      {/* <p className="h3 mt-4 mb-4 font-weight-bold">Sign in with:</p> */}
+      <p className="h3 mt-4 mb-4 font-weight-bold">Sign in with:</p>
       <div
         className={classNames(
           "d-flex justify-content-center align-items-center",
           "pointer"
         )}
-        onClick={() => {}}
+        onClick={() => {handleLogin("google") }}
       >
-        <BsGoogle
-          className={style.googleIcon}
-          onClick={() => handleLogin("google")}
-        />
+        <BsGoogle className={style.googleIcon} />
         <p className="m-0">Login with Google</p>
       </div>
     </div>
