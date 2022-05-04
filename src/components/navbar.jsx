@@ -7,7 +7,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
-import { logout } from "./../reducers/profileSlice";
+import { signout } from "../actions/auth";
 import { useState } from "react";
 
 const NavBar = (props) => {
@@ -42,7 +42,7 @@ const NavBar = (props) => {
       text: "Log out",
       click: () => {
         navigate("/", { replace: true });
-        dispatch(logout());
+        dispatch(signout());
         setActive("Log out");
       },
     },
