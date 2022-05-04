@@ -14,35 +14,39 @@ import Example from "./routes/example";
 import { useSelector } from "react-redux";
 import { selectStatus } from "./reducers/profileSlice";
 import logo from "./CSUNorthridgelogo.svg";
+import { Footer } from "./components/footer";
 
 
 function App() {
   const status = useSelector(selectStatus);
 
   return (
-    <>
-      <BrowserRouter>
-        {!!status && <NavBar logo={logo} />}
+    <div className="d-flex flex-column vh-100">
+      <div>
+        <BrowserRouter>
+          {!!status && <NavBar logo={logo} />}
 
-        <Container className="pt-3 pb-3">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            {status !== "" && (
-              <>
-                <Route path="example" element={<Example />} />
-                <Route path="search" element={<Search />} />
-                <Route path="wishlist" element={<Wishlist />} />
-                <Route path="courseView" element={<CourseView />} />
-              </>
-            )}
-            <Route
-              path="*"
-              element={<h1 className="text-center">404 Not Found</h1>}
-            />
-          </Routes>
-        </Container>
-      </BrowserRouter>
-    </>
+          <Container className="pt-3 pb-3">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              {status !== "" && (
+                <>
+                  <Route path="example" element={<Example />} />
+                  <Route path="search" element={<Search />} />
+                  <Route path="wishlist" element={<Wishlist />} />
+                  <Route path="courseView" element={<CourseView />} />
+                </>
+              )}
+              <Route
+                path="*"
+                element={<h1 className="text-center">404 Not Found</h1>}
+              />
+            </Routes>
+          </Container>
+        </BrowserRouter>
+      </div>
+      {status === "logged-in" && <Footer />}
+    </div>
   );
 }
 
