@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { BsGoogle } from "react-icons/bs";
 import { useUserAuth } from "../context/authProviders";
 import classNames from "classnames";
@@ -7,8 +6,9 @@ import style from "./login.module.scss";
 import LoginForm from "./loginForm";
 import Message from "../components/Message";
 
-import { login, selectError, error } from "../reducers/profileSlice";
+import { selectError, error } from "../reducers/profileSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { signin } from "../actions/auth";
 
 const Login = () => {
   const emailState = useState("");
@@ -16,14 +16,9 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const errorMessage = useSelector(selectError);
-
-  // const [error, setError] = useState("");
   const { logIn, googleSignIn } = useUserAuth();
-  const navigate = useNavigate();
 
   const handleLogin = async (buttonType) => {
-    // setError("");
-
     try {
       let currentUser;
       if (buttonType === "google") {
@@ -33,21 +28,12 @@ const Login = () => {
         let password = passwordState[0];
         currentUser = await logIn(email, password);
       }
+      if(currentUser){
+        signin(dispatch,currentUser)
+      }
 
-      dispatch(
-        login({
-          email: currentUser.email,
-          uid: currentUser.uid,
-          status: "logged-in",
-          mainSubject: "",
-        })
-      );
-
-      dispatch(error({ errorMessage: "" }));
-      navigate("/");
     } catch (err) {
       dispatch(error({ errorMessage: err.message }));
-      // setError({ errorMessage: err });
     }
   };
 

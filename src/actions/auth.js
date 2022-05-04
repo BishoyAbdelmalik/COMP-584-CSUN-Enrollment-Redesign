@@ -1,6 +1,7 @@
 
+import { getMainSubject } from "../api/utils";
 import { useUserAuth } from "../context/authProviders";
-import { logout, error } from "./../reducers/profileSlice";
+import { logout, error, login } from "./../reducers/profileSlice";
 
 
 export const signout = () => async (dispatch) => {
@@ -12,3 +13,14 @@ export const signout = () => async (dispatch) => {
     dispatch(error({ errorMessage: err.message }));
   }
 };
+
+export const signin = (dispatch,currentUser) =>{
+  dispatch(
+    login({
+      email: currentUser.email,
+      uid: currentUser.uid,
+      status: "logged-in",
+      mainSubject: getMainSubject(currentUser.uid),
+    })
+  );
+}

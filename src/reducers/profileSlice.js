@@ -5,6 +5,7 @@ const initialState = {
   status: "",
   mainSubject: "",
   userUUID: "",
+  errorMessage:"",
 };
 
 export const profileSlice = createSlice({
@@ -22,6 +23,7 @@ export const profileSlice = createSlice({
       state.mainSubject = action.payload.mainSubject;
       state.status = "logged-in";
       state.userUUID = action.payload.uid;
+      state.errorMessage = "";
     },
     logout: (state) => {
       localStorage.clear("user");
