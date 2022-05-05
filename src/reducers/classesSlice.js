@@ -16,7 +16,7 @@ export const classesSlice = createSlice({
         // doesn't actually mutate the state because it uses the Immer library,
         // which detects changes to a "draft state" and produces a brand new
         // immutable state based off those changes
-        state.mainSubject = [...state.mainSubject,...action.payload]      
+        state.mainSubject = action.payload.mainSubject    
       },
       addGEClass: (state, action)=>{
         state.ge = action.payload.ge
@@ -46,6 +46,7 @@ export const classesSlice = createSlice({
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectGE = (state) => state.classes.ge;
+export const selectMainSubjectClasses = (state) => state.classes.mainSubject;
 // export const selectEmail = (state) => state.classesSlice.email;
 // export const selectStatus = (state) => state.classesSlice.status;
 

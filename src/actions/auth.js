@@ -1,7 +1,6 @@
-
+import { getMainSubject } from "../api/utils";
 import { useUserAuth } from "../context/authProviders";
 import { logout, error, login } from "./../reducers/profileSlice";
-
 
 export const manualSignUp = (email, password) => async (dispatch) => {
   const { signUp } = useUserAuth();
@@ -14,7 +13,7 @@ export const manualSignUp = (email, password) => async (dispatch) => {
         email: currentUser.user.email,
         uid: currentUser.uid,
         status: "logged-in",
-        mainSubject: "",
+        mainSubject: "comp",
       })
     );
     dispatch(error({ errorMessage: "" }));
@@ -43,7 +42,7 @@ export const manualLoginAction = (email, password) => async (dispatch) => {
         email: currentUser.email,
         uid: currentUser.uid,
         status: "logged-in",
-        mainSubject: "",
+        mainSubject: "comp",
       })
     );
 
@@ -63,7 +62,7 @@ export const googleLoginAction = () => async (dispatch) => {
         email: currentUser.email,
         uid: currentUser.uid,
         status: "logged-in",
-        mainSubject: "",
+        mainSubject: "comp",
       })
     );
 
@@ -71,4 +70,15 @@ export const googleLoginAction = () => async (dispatch) => {
   } catch (err) {
     dispatch(error({ errorMessage: err.message }));
   }
+};
+
+export const signin = (dispatch, currentUser) => {
+  dispatch(
+    login({
+      email: currentUser.email,
+      uid: currentUser.uid,
+      status: "logged-in",
+      mainSubject: getMainSubject(currentUser.uid),
+    })
+  );
 };

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { BsGoogle } from "react-icons/bs";
 import { useUserAuth } from "../context/authProviders";
 import classNames from "classnames";
@@ -7,8 +6,9 @@ import style from "./login.module.scss";
 import LoginForm from "./loginForm";
 import Message from "../components/Message";
 
-import { login, selectError, error } from "../reducers/profileSlice";
+import { selectError, error } from "../reducers/profileSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { signin } from "../actions/auth";
 
 import { manualLoginAction, googleLoginAction } from "../actions/auth";
 
@@ -18,10 +18,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const errorMessage = useSelector(selectError);
-
-  // const [error, setError] = useState("");
   const { logIn, googleSignIn } = useUserAuth();
-  const navigate = useNavigate();
 
   const handleLogin = async (buttonType) => {
     // setError("");
@@ -59,7 +56,9 @@ const Login = () => {
           "d-flex justify-content-center align-items-center",
           "pointer"
         )}
-        onClick={() => {handleLogin("google") }}
+        onClick={() => {
+          handleLogin("google");
+        }}
       >
         <BsGoogle className={style.googleIcon} />
         <p className="m-0">Login with Google</p>
