@@ -35,8 +35,8 @@ export const getClasses = (id) => {
 export const getTeacherName = (email) => {
     return fetch(`${URL_CSUN_API_DIRECTORY}${email}`).then(response => response.json())
         .then(data => {
-            if (data.status === "200" && data.people.common_name !== undefined) {
-                return data.people.common_name;
+            if (data.status === "200" && data.people.display_name !== undefined) {
+                return data.people.display_name;
             }
             return email
         })
@@ -44,3 +44,12 @@ export const getTeacherName = (email) => {
 }
 
 export const getMainSubject = (uuid) => ("comp");
+
+export const convertTime = (time) => {
+    time = time.slice(0, -1);
+    let hours = parseInt(time.substring(0, 2));
+    let minute = parseInt(time.slice(2));
+    let convertedHours = ((hours + 11) % 12 + 1);
+    let amPM = (hours>=12)?"PM":"AM";
+    return `${convertedHours.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')} ${amPM}`;
+}
