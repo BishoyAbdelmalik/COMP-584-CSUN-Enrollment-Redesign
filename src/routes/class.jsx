@@ -12,19 +12,22 @@ import style from "./../components/classPage.module.scss"
 
 export const Class = () => {
     const { id } = useParams();
-    const [sections, setSections] = useState([]);
+    const [sections, setSections] = useState(undefined);
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [number, setNumber] = useState(id.toUpperCase());
     const [units, setUnits] = useState(0);
     useEffect(() => {
-        if (sections.length > 0) {
+        if(sections === undefined){
+            getClasses(id).then((d) => (setSections(d)));
+        }
+        if (sections !== undefined && sections.length > 0) {
             setTitle(sections[0].title);
             setNumber(`${sections[0].subject}-${sections[0].catalog_number}`);
             setUnits(sections[0].units);
             setDescription(sections[0].description);
-        }else{
-            getClasses(id).then((d) => (setSections(d)));
+        } else{
+            setTitle("Class not offered this semester");
         }
     }, [sections]);
     return (
@@ -32,7 +35,7 @@ export const Class = () => {
             <Link to={"/search"} className={classNames("text-muted", "text-decoration-none", "mb-2")}><MdKeyboardArrowLeft />Back to search</Link>
             <div className={classNames(appStyle.grid,style.pageGrid)}>
                 {
-                    title === "" ? <Spinner animation="border" /> :
+                    sections === undefined ? <Spinner animation="border" /> :
                         <>
                             <ClassTitle id={number} title={title} units={units} />
                             <ClassDescription description={description}/>
