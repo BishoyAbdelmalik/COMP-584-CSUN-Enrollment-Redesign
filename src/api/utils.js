@@ -38,6 +38,12 @@ export const getTeacherName = (email) => {
             if (data.status === "200" && data.people.display_name !== undefined) {
                 return data.people.display_name;
             }
+            if(email.includes("@my.csun.edu")){
+                let getNames = email.split('.');
+                const capFirstLetter = (str) => {return str.charAt(0).toUpperCase() + str.slice(1);}
+                let constructName = `${capFirstLetter(getNames[0])} ${capFirstLetter(getNames[1])}`;
+                return constructName;
+            }
             return email
         })
         .catch(err => console.error(err));
