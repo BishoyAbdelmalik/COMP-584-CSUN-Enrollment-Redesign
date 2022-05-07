@@ -19,7 +19,7 @@ import { Class } from "./routes/class";
 import { onAuthStateChanged } from "firebase/auth";
 import { signin } from "./actions/auth";
 import { auth } from "./firebase";
-import { getClasses, getGEClasses } from "./api/utils";
+import { getRidOfDuplicateClasses, getGEClasses } from "./api/utils";
 import { addGEClass, addMainSubjectClass } from "./reducers/classesSlice";
 
 function App() {
@@ -34,16 +34,16 @@ function App() {
 
   useEffect(() => {
     if (status === 'logged-in') {
-      getClasses(mainSubject).then(response => dispatch(addMainSubjectClass({ mainSubject: response })));
+      getRidOfDuplicateClasses(mainSubject).then(response => dispatch(addMainSubjectClass({ mainSubject: response })));
     }
   }, [mainSubject, status, dispatch]);
-  
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
       if (currentuser) {
         // user is logged in, send the user's details to redux, store the current user in the state
 
-        signin(dispatch,currentuser);
+        signin(dispatch, currentuser);
 
       } else {
         dispatch(logout());
