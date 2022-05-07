@@ -6,7 +6,7 @@ import style from './classCompact.module.scss'
 import { FaFolder } from "react-icons/fa";
 import { BsXCircle } from "react-icons/bs";
 
-const ClassCompact = ({ id, name, units, dropDown }) => {
+const ClassCompact = ({ id, name, units, dropDown, openModal }) => {
     const [show, setShow] = dropDown;
     return (
         <div className={classNames(appStyles.grid, style.grid, "position-relative")}>
@@ -21,7 +21,7 @@ const ClassCompact = ({ id, name, units, dropDown }) => {
                 }
             }} />
             <Dropdown.Menu show={show === id} align={{ sm: "end" }}>
-                <Dropdown.Item href="#" className="d-flex align-items-center"><FaFolder size={20} /><span className="m-1">Set Category</span></Dropdown.Item>
+                <Dropdown.Item href="#" onClick={() => openModal()} className="d-flex align-items-center"><FaFolder size={20} /><span className="m-1">Set Category</span></Dropdown.Item>
                 <Dropdown.Item href="#" className="d-flex align-items-center"><BsXCircle size={20} /><span className="m-1">Unbookmark</span></Dropdown.Item>
             </Dropdown.Menu>
         </div>
