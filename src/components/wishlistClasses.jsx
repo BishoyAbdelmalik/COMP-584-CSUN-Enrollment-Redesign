@@ -18,12 +18,15 @@ const WishlistClasses = ({ classes }) => {
     const modalOpen = () => {
         setShowModal(true);
     };
+    const modalSave = () => {
+        modalClose();
+    }
     const getClassesForCategory = (category) => classes.filter((c) => c.semester === category);
     return (
         <>
             {classes.length === 0 && <p>You have not bookmarked any classes</p>}
             {catagories.map((category, index) => <WishlistSection key={index} title={category} classes={getClassesForCategory(category)} showDropDownState={showDropDownState} openModal={modalOpen} />)}
-            <WishlistSetCategoryModal show={showModal} handleClose={modalClose} handleSave={() => { }} />
+            <WishlistSetCategoryModal show={showModal} handleClose={modalClose} handleSave={modalSave} course={classes.find(c=> c.id === showDropDownState[0])} />
         </>
     );
 }
