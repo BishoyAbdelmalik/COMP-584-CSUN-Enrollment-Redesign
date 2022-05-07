@@ -39,10 +39,10 @@ export const getTeacherName = (email) => {
                 return data.people.display_name;
             }
             if(email.includes("@my.csun.edu")){
-                let getNames = email.split('.');
+                let getEmailAddress = email.split('.');
                 const capFirstLetter = (str) => {return str.charAt(0).toUpperCase() + str.slice(1);}
-                let constructName = `${capFirstLetter(getNames[0])} ${capFirstLetter(getNames[1])}`;
-                return constructName;
+                let constructDisplayName = `${capFirstLetter(getEmailAddress[0])} ${capFirstLetter(getEmailAddress[1])}`;
+                return constructDisplayName;
             }
             return email
         })
