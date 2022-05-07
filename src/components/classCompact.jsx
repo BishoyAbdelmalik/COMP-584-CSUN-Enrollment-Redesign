@@ -1,25 +1,28 @@
 import classNames from "classnames";
-import { useState } from "react";
 import { Dropdown } from "react-bootstrap";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import appStyles from './../App.module.scss';
 import style from './classCompact.module.scss'
+import { FaFolder } from "react-icons/fa";
+import { BsXCircle } from "react-icons/bs";
 
-const ClassCompact = ({ id, name, units }) => {
-    const [show, setShow] = useState(false);
+const ClassCompact = ({ id, name, units, dropDown }) => {
+    const [show, setShow] = dropDown;
     return (
         <div className={classNames(appStyles.grid, style.grid, "position-relative")}>
             <p className="m-0"><span className="h5">{id}</span> <span>({units})</span></p>
             <p className={classNames("m-0", "text-muted")}>{name}</p>
 
-            <BsThreeDotsVertical className={style.dots} onClick={({ target }) => { 
-                target.classList.toggle(style.selected);
-                setShow(!show); 
+            <BsThreeDotsVertical className={classNames(style.dots, { [style.selected]: show === id })} onClick={({ target }) => {
+                if (show === id) {
+                    setShow("");
+                } else {
+                    setShow(id);
+                }
             }} />
-            <Dropdown.Menu show={show} align={{ sm: "end" }}>
-                <Dropdown.Item href="#">Action</Dropdown.Item>
-                <Dropdown.Item href="#">Another action</Dropdown.Item>
-                <Dropdown.Item href="#">Something else</Dropdown.Item>
+            <Dropdown.Menu show={show === id} align={{ sm: "end" }}>
+                <Dropdown.Item href="#" className="d-flex align-items-center"><FaFolder size={20} /><span className="m-1">Set Category</span></Dropdown.Item>
+                <Dropdown.Item href="#" className="d-flex align-items-center"><BsXCircle size={20} /><span className="m-1">Unbookmark</span></Dropdown.Item>
             </Dropdown.Menu>
         </div>
     );
