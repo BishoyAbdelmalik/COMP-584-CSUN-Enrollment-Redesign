@@ -43,6 +43,9 @@ const WishlistSetCategoryModal = ({ show, handleClose, handleSave, course }) => 
                             max={9999}
                             defaultValue={year}
                             onChange={({target}) => {
+                                if (target.value.length>4 ) {
+                                    target.value=year;
+                                }
                                 setYear(target.value);
                             }}
                         />
