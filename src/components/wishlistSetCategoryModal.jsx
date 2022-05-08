@@ -4,18 +4,18 @@ import { Button, Form, Modal } from "react-bootstrap";
 const WishlistSetCategoryModal = ({ show, handleClose, handleSave, course }) => {
     const [semester, setSemester] = useState("");
     const [year, setYear] = useState("");
-    useEffect(()=>{
-        if(course!==undefined){
-            if(course.semester===null){
+    useEffect(() => {
+        if (course !== undefined) {
+            if (course.semester === null) {
                 setSemester("Unorganized");
                 setYear("");
-            }else{
+            } else {
                 const semesterArray = course.semester.split(" ");
                 setSemester(semesterArray[0]);
                 setYear(semesterArray[1]);
             }
         }
-    },[course]);
+    }, [course]);
 
     return (
         <>
@@ -27,7 +27,7 @@ const WishlistSetCategoryModal = ({ show, handleClose, handleSave, course }) => 
                     </Modal.Header>
                     <Modal.Body>
                         <p>Select a semester you plan on taking {course.id}.</p>
-                        <Form.Select aria-label="Default select example" defaultValue={semester} onChange={({target})=>{
+                        <Form.Select aria-label="Default select example" defaultValue={semester} onChange={({ target }) => {
                             setSemester(target.value);
                         }}>
                             <option value="Unorganized">Unorganized</option>
@@ -37,6 +37,15 @@ const WishlistSetCategoryModal = ({ show, handleClose, handleSave, course }) => 
                             <option value="Winter">Winter</option>
                         </Form.Select>
                         <p>Select a year you plan on taking {course.id}.</p>
+                        <Form.Control
+                            type="number"
+                            min={1000}
+                            max={9999}
+                            defaultValue={new Date().getFullYear()}
+                            onChange={({target}) => {
+                                setYear(target.value);
+                            }}
+                        />
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
