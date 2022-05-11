@@ -20,22 +20,24 @@ import { onAuthStateChanged } from "firebase/auth";
 import { signin } from "./actions/auth";
 import { auth } from "./firebase";
 import { getRidOfDuplicateClasses, getGEClasses, getAllCourses } from "./api/utils";
-import { addAllCourses, addGEClass, addMainSubjectClass } from "./reducers/classesSlice";
+import { addAllCourses, addGEClass, addMainSubjectClass, selectAllCourses } from "./reducers/classesSlice";
 
 function App() {
   const status = useSelector(selectStatus);
   const dispatch = useDispatch();
   const mainSubject = useSelector(selectMainSubject);
+  const allCourses = useSelector(selectAllCourses);
   useEffect(() => {
     if (status === 'logged-in') {
       getGEClasses().then(response => dispatch(addGEClass({ ge: response })));
-      let courses = getAllCourses();
-
-      getAllCourses().then(response=> dispatch(addAllCourses({ allCourses: response })));
-       console.log(courses)
-      // dispatch(addAllCourses({ allCourses: courses }))
     }
   }, [status, dispatch]);
+  
+  useEffect(()=>{
+    if(allCourses.length===0){
+      getAllCourses().then(response=> dispatch(addAllCourses({ allCourses: response })));
+    }
+  },[allCourses,dispatch]);
 
   useEffect(() => {
     if (status === 'logged-in') {

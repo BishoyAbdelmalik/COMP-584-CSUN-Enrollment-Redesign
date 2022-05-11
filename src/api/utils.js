@@ -1,4 +1,3 @@
-import { async } from "@firebase/util";
 import { URL_CSUN_API, URL_CSUN_API_DIRECTORY, URL_CSUN_API_TERM } from "../constants/userConstants";
 
 export const getGEClasses = () => {
@@ -7,8 +6,11 @@ export const getGEClasses = () => {
         .catch(err => console.error(err));
 }
 
-const getAPIURLTerm = (id, term, type="classes") => {
-    return `${URL_CSUN_API_TERM}${term}/${type}/${id}`
+const getAPIURLTerm = (id, term, type = "classes") => {
+    if (id !== "") {
+        id = `/${id}`;
+    }
+    return `${URL_CSUN_API_TERM}${term}/${type}${id}`
 }
 const getAPIURL = (id) => {
     return `${URL_CSUN_API}/classes/${id}`
@@ -28,21 +30,18 @@ const getTerm = (date = new Date()) => {
     return `${semester}-${year}`;
 }
 
-export const  getAllCourses = () => {
-
-    async function testAPI (){
-        let res = await fetch("https://api.metalab.csun.edu/curriculum/api/2.0/terms/Spring-2022/courses");
-        res = res.json();
-        let courses = res.courses;
-        return courses;
-
+export const getAllCourses = () => {
+    const allCourses = localStorage.getItem('allCourses');
+    if (allCourses !== null) {
+        return new Promise((resolve) => resolve(JSON.parse(allCourses)));
     }
-   
-    let courses = testAPI();
-    return courses;
-    // return fetch(getAPIURLTerm("", getTerm(), "courses")).then(response => response.json())
-    //     .then(data => data.courses)
-    //     .catch(err => console.error(err));
+
+    return fetch(getAPIURLTerm("", getTerm(), "courses")).then(response => response.json())
+        .then(data => {
+            localStorage.setItem("allCourses", JSON.stringify(data.courses));
+            return data.courses;
+        })
+        .catch(err => console.error(err));
 }
 
 export const getClasses = (id) => {

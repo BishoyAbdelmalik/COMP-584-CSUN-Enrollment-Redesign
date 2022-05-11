@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
     mainSubject: [],
     ge: [],
-    allCourses: []
+    allCourses: [],
   };
 
 export const classesSlice = createSlice({
