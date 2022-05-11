@@ -18,6 +18,9 @@ export default function Search() {
       <div className={classNames("mx-auto",appStyles.form)}>
         <SearchBox onSearch={(value)=>{
           console.log(value);
+          if(selectedType!=="search"){
+            setSelectedType("search");
+          }
         }} />
         <Button
           variant="primary"

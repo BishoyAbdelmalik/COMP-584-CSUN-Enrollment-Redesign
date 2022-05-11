@@ -1,3 +1,4 @@
+import { async } from "@firebase/util";
 import { URL_CSUN_API, URL_CSUN_API_DIRECTORY, URL_CSUN_API_TERM } from "../constants/userConstants";
 
 export const getGEClasses = () => {
@@ -6,8 +7,8 @@ export const getGEClasses = () => {
         .catch(err => console.error(err));
 }
 
-const getAPIURLTerm = (id, term) => {
-    return `${URL_CSUN_API_TERM}${term}/classes/${id}`
+const getAPIURLTerm = (id, term, type="classes") => {
+    return `${URL_CSUN_API_TERM}${term}/${type}/${id}`
 }
 const getAPIURL = (id) => {
     return `${URL_CSUN_API}/classes/${id}`
@@ -25,6 +26,23 @@ const getTerm = (date = new Date()) => {
         semester = "Summer"
     }
     return `${semester}-${year}`;
+}
+
+export const  getAllCourses = () => {
+
+    async function testAPI (){
+        let res = await fetch("https://api.metalab.csun.edu/curriculum/api/2.0/terms/Spring-2022/courses");
+        res = res.json();
+        let courses = res.courses;
+        return courses;
+
+    }
+   
+    let courses = testAPI();
+    return courses;
+    // return fetch(getAPIURLTerm("", getTerm(), "courses")).then(response => response.json())
+    //     .then(data => data.courses)
+    //     .catch(err => console.error(err));
 }
 
 export const getClasses = (id) => {

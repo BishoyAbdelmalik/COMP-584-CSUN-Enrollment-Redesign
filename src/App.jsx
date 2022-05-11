@@ -19,8 +19,8 @@ import { Class } from "./routes/class";
 import { onAuthStateChanged } from "firebase/auth";
 import { signin } from "./actions/auth";
 import { auth } from "./firebase";
-import { getRidOfDuplicateClasses, getGEClasses } from "./api/utils";
-import { addGEClass, addMainSubjectClass } from "./reducers/classesSlice";
+import { getRidOfDuplicateClasses, getGEClasses, getAllCourses } from "./api/utils";
+import { addAllCourses, addGEClass, addMainSubjectClass } from "./reducers/classesSlice";
 
 function App() {
   const status = useSelector(selectStatus);
@@ -29,6 +29,11 @@ function App() {
   useEffect(() => {
     if (status === 'logged-in') {
       getGEClasses().then(response => dispatch(addGEClass({ ge: response })));
+      let courses = getAllCourses();
+
+      getAllCourses().then(response=> dispatch(addAllCourses({ allCourses: response })));
+       console.log(courses)
+      // dispatch(addAllCourses({ allCourses: courses }))
     }
   }, [status, dispatch]);
 

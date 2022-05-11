@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     mainSubject: [],
-    ge: []
+    ge: [],
+    allCourses: []
   };
 
 export const classesSlice = createSlice({
@@ -20,6 +21,9 @@ export const classesSlice = createSlice({
       },
       addGEClass: (state, action)=>{
         state.ge = action.payload.ge
+      },
+      addAllCourses: (state, action)=>{
+        state.allCourses = action.payload.allCourses
       },
       reset:()=>{
         return initialState
@@ -39,7 +43,7 @@ export const classesSlice = createSlice({
     // },
   });
 
-  export const { reset, addMainSubjectClass,addGEClass } = classesSlice.actions;
+  export const { reset, addMainSubjectClass,addGEClass,addAllCourses } = classesSlice.actions;
   
   
 // The function below is called a selector and allows us to select a value from
@@ -47,6 +51,8 @@ export const classesSlice = createSlice({
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectGE = (state) => state.classes.ge;
 export const selectMainSubjectClasses = (state) => state.classes.mainSubject;
+export const selectAllCourses = (state) => state.classes.allCourses;
+
 // export const selectEmail = (state) => state.classesSlice.email;
 // export const selectStatus = (state) => state.classesSlice.status;
 
