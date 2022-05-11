@@ -31,16 +31,10 @@ const getTerm = (date = new Date()) => {
 }
 
 export const getAllCourses = () => {
-    const allCourses = localStorage.getItem('allCourses');
-    if (allCourses !== null) {
-        return new Promise((resolve) => resolve(JSON.parse(allCourses)));
-    }
-
-    return fetch(getAPIURLTerm("", getTerm(), "courses")).then(response => response.json())
-        .then(data => {
-            localStorage.setItem("allCourses", JSON.stringify(data.courses));
-            return data.courses;
-        })
+    return fetch(getAPIURLTerm("", getTerm(), "courses"), {
+        cache: "force-cache",
+    }).then(response => response.json())
+        .then(data => data.courses)
         .catch(err => console.error(err));
 }
 
