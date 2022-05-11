@@ -13,6 +13,16 @@ The CSUN class search and enrollment system suffers from outdated and difficult 
   - Students will be able to sort class section by the following criteria (Day of
 week, time slot, total enrollment number, waitlist number, online or inperson )
 
+## Tech Stack:
+- Front-end:
+  - React 
+  - Redux
+  - SCSS
+- Back-end:
+  - Firebase
+- APIs:
+  - [CSUN curriculum api](https://api.metalab.csun.edu/curriculum/)
+
 ## Setup ##
 
 Run the command below to install all the required packages.
@@ -32,5 +42,3 @@ npm start
 ### Live Deployment
 
 Open [https://mycsunclass.netlify.app/](https://mycsunclass.netlify.app/) to view it in your browser.
-
-
