@@ -10,7 +10,7 @@ import { selectError, error } from "../reducers/profileSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { signin } from "../actions/auth";
 
-import { manualLoginAction, googleLoginAction } from "../actions/auth";
+import { handleUserAuthentication } from "../actions/auth";
 
 const Login = () => {
   const emailState = useState("");
@@ -24,11 +24,11 @@ const Login = () => {
     // setError("");
 
     if (buttonType === "google") {
-      dispatch(googleLoginAction());
+      dispatch(handleUserAuthentication(googleSignIn));
     } else {
       let email = emailState[0];
       let password = passwordState[0];
-      dispatch(manualLoginAction(email, password));
+      dispatch(handleUserAuthentication(logIn, email, password));
     }
   };
 
