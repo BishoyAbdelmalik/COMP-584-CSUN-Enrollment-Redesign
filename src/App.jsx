@@ -12,7 +12,11 @@ import NavBar from "./components/navbar";
 import { Container } from "react-bootstrap";
 import Example from "./routes/example";
 import { useDispatch, useSelector } from "react-redux";
-import { logout, selectMainSubject, selectStatus } from "./reducers/profileSlice";
+import {
+  logout,
+  selectMainSubject,
+  selectStatus,
+} from "./reducers/profileSlice";
 import logo from "./CSUNorthridgelogo.svg";
 import { Footer } from "./components/footer";
 import { Class } from "./routes/class";
@@ -27,24 +31,24 @@ function App() {
   const dispatch = useDispatch();
   const mainSubject = useSelector(selectMainSubject);
   useEffect(() => {
-    if (status === 'logged-in') {
-      getGEClasses().then(response => dispatch(addGEClass({ ge: response })));
+    if (status === "logged-in") {
+      getGEClasses().then((response) => dispatch(addGEClass({ ge: response })));
     }
   }, [status, dispatch]);
 
   useEffect(() => {
-    if (status === 'logged-in') {
-      getClasses(mainSubject).then(response => dispatch(addMainSubjectClass({ mainSubject: response })));
+    if (status === "logged-in" && !!mainSubject) {
+      getClasses(mainSubject).then((response) =>
+        dispatch(addMainSubjectClass({ mainSubject: response }))
+      );
     }
   }, [mainSubject, status, dispatch]);
-  
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
       if (currentuser) {
         // user is logged in, send the user's details to redux, store the current user in the state
-
-        signin(dispatch,currentuser);
-
+        signin(dispatch, currentuser);
       } else {
         dispatch(logout());
       }
