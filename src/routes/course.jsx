@@ -16,7 +16,7 @@ export default function Course() {
   const uuid = useSelector(selectUser);
   const dispatch = useDispatch();
   const majors = useSelector(selectAllMajors);
-  const [majorSelected, setMajor] = useState("comp");
+  const [majorSelected, setMajor] = useState("COMP");
 
   let { fetchMajors, updateUserMajorDetails } = useFirebaseDetails();
   useEffect(() => {
@@ -47,8 +47,7 @@ export default function Course() {
           <Col md={4}>Major:</Col>
           <Col xs="auto" className="my-1">
             <Form.Select
-              as="select"
-              value={majorSelected}
+              defaultValue={majorSelected}
               onChange={(e) => setMajor(e.target.value)}
             >
               {majors.map((x, i) => (

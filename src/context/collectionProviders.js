@@ -31,11 +31,7 @@ function updateUserMajorDetails(major, uuid) {
 function updateFavorites(uuid, course, add) {
   const db = getDatabase();
   if (add) {
-    set(ref(db, "users/" + uuid + "/favourites/" + course.id), {
-      id: course.id,
-      name: course.title,
-      units: course.units,
-    });
+    set(ref(db, "users/" + uuid + "/favourites/" + course.id), course);
   } else {
     remove(ref(db, "users/" + uuid + "/favourites/" + course.id));
   }

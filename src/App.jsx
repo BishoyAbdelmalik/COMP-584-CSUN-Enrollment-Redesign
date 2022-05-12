@@ -23,8 +23,9 @@ import { Class } from "./routes/class";
 import { onAuthStateChanged } from "firebase/auth";
 import { signin } from "./actions/auth";
 import { auth } from "./firebase";
-import { getClasses, getGEClasses } from "./api/utils";
+import { getRidOfDuplicateClasses, getGEClasses } from "./api/utils";
 import { addGEClass, addMainSubjectClass } from "./reducers/classesSlice";
+import Delay from "./components/delay";
 
 function App() {
   const status = useSelector(selectStatus);
@@ -37,10 +38,8 @@ function App() {
   }, [status, dispatch]);
 
   useEffect(() => {
-    if (status === "logged-in" && !!mainSubject) {
-      getClasses(mainSubject).then((response) =>
-        dispatch(addMainSubjectClass({ mainSubject: response }))
-      );
+    if (status === 'logged-in') {
+      getRidOfDuplicateClasses(mainSubject).then(response => dispatch(addMainSubjectClass({ mainSubject: response })));
     }
   }, [mainSubject, status, dispatch]);
 
@@ -79,7 +78,7 @@ function App() {
               )}
               <Route
                 path="*"
-                element={<h1 className="text-center">404 Not Found</h1>}
+                element={<Delay><h1 className="text-center">404 Not Found</h1></Delay>}
               />
             </Routes>
           </Container>

@@ -4,12 +4,14 @@ import { useSelector } from "react-redux";
 import Login from "../components/login";
 import Search from "./search";
 import Course from "./course";
+import Delay from "../components/delay";
+
 
 const Home = () => {
   const status = useSelector(selectStatus);
   const mainSubject = useSelector(selectMainSubject);
 
-  return <>{!!status ? !!mainSubject ? <Search /> : <Course /> : <Login />}</>;
+  return <><Delay>{!!status ? !!mainSubject ? <Search /> : <Course /> : <Login />}</Delay></>;
 };
 
 export default Home;

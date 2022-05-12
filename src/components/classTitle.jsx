@@ -29,6 +29,7 @@ export const ClassTitle = ({ id, title, units }) => {
       updateFavorites(uuid, course, false);
     } else {
       // favIds.add(course.id);
+      course.semester=null;
       dispatch(addClass(course));
       updateFavorites(uuid, course, true);
     }

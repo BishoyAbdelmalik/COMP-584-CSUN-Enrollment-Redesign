@@ -35,34 +35,52 @@ const getTerm = (date = new Date()) => {
 };
 
 export const getClasses = (id) => {
-  return fetch(getAPIURLTerm(id, getTerm()))
-    .then((response) => response.json())
-    .then((data) => data.classes)
-    .catch((err) => console.error(err));
-};
+    return fetch(getAPIURLTerm(id, getTerm())).then(response => response.json())
+        .then(data => data.classes)
+        .catch(err => console.error(err));
+}
+
+export const getRidOfDuplicateClasses = (subj) => {
+    return fetch(getAPIURLTerm(subj, getTerm())).then(response => response.json())
+        .then((data) => {
+            const seen = new Set();
+            let getFilteredDuplicates = data.classes.filter((el) => {
+                const duplicate = seen.has(el.catalog_number);
+                seen.add(el.catalog_number);
+                return !duplicate;
+            });
+            return getFilteredDuplicates;
+        })
+        .catch(err => console.error(err));
+}
+
 export const getTeacherName = (email) => {
-  return fetch(`${URL_CSUN_API_DIRECTORY}${email}`)
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.status === "200" && data.people.display_name !== undefined) {
-        return data.people.display_name;
-      }
-      return email;
-    })
-    .catch((err) => console.error(err));
-};
+    return fetch(`${URL_CSUN_API_DIRECTORY}${email}`, {
+        cache: "force-cache",
+    }).then(response => response.json())
+        .then(data => {
+            if (data.status === "200" && data.people.display_name !== undefined) {
+                return data.people.display_name;
+            }
+            if (email.includes("@my.csun.edu")) {
+                let getEmailAddress = email.split('.');
+                const capFirstLetter = (str) => (`${str.charAt(0).toUpperCase()}${str.slice(1)}`);
+                return `${capFirstLetter(getEmailAddress[0])} ${capFirstLetter(getEmailAddress[1])}`;
+            }
+            return email;
+        })
+        .catch(err => console.error(err));
+}
 
 export const getMainSubject = (uuid) => {
   return localStorage.getItem("userMajor");
 };
 
 export const convertTime = (time) => {
-  time = time.slice(0, -1);
-  let hours = parseInt(time.substring(0, 2));
-  let minute = parseInt(time.slice(2));
-  let convertedHours = ((hours + 11) % 12) + 1;
-  let amPM = hours >= 12 ? "PM" : "AM";
-  return `${convertedHours.toString().padStart(2, "0")}:${minute
-    .toString()
-    .padStart(2, "0")} ${amPM}`;
-};
+    time = time.slice(0, -1);
+    let hours = parseInt(time.substring(0, 2));
+    let minute = parseInt(time.slice(2));
+    let convertedHours = ((hours + 11) % 12 + 1);
+    let amPM = (hours >= 12) ? "PM" : "AM";
+    return `${convertedHours.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')} ${amPM}`;
+}

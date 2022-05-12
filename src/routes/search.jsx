@@ -2,12 +2,15 @@ import SearchBox from "../components/searchBox";
 import { Button } from "react-bootstrap";
 import appStyles from "./../App.module.scss"
 import classNames from "classnames";
-import GEList from "./../components/geList"
-import { selectGE } from "../reducers/classesSlice";
+import GEList from "./../components/geList";
+import SubjSnippet from "../components/subjSnippet";
+import { selectGE, selectMainSubjectClasses } from "../reducers/classesSlice";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+
 export default function Search() {
   const ges = useSelector(selectGE);
+  const subj = useSelector(selectMainSubjectClasses);
   const [selectedType, setSelectedType] = useState("");
   return (
     <>
@@ -32,9 +35,8 @@ export default function Search() {
         </Button>
         <div className="mb-3 mt-3">
         {selectedType==="ge"&&<GEList ges={ges}/>}
-        {selectedType==="major"&&<></>}
+        {selectedType==="major"&&<SubjSnippet subj={subj}/>}
         </div>
-        
       </div>
     </>
   );
