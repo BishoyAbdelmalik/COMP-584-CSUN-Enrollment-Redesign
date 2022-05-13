@@ -13,9 +13,12 @@ export const getGEClasses = () => {
     .catch((err) => console.error(err));
 };
 
-const getAPIURLTerm = (id, term) => {
-  return `${URL_CSUN_API_TERM}${term}/classes/${id}`;
-};
+const getAPIURLTerm = (id, term, type = "classes") => {
+    if (id !== "") {
+        id = `/${id}`;
+    }
+    return `${URL_CSUN_API_TERM}${term}/${type}${id}`
+}
 const getAPIURL = (id) => {
   return `${URL_CSUN_API}/classes/${id}`;
 };
@@ -33,6 +36,14 @@ const getTerm = (date = new Date()) => {
   }
   return `${semester}-${year}`;
 };
+
+export const getAllCourses = () => {
+    return fetch(getAPIURLTerm("", getTerm(), "courses"), {
+        cache: "force-cache",
+    }).then(response => response.json())
+        .then(data => data.courses)
+        .catch(err => console.error(err));
+}
 
 export const getClasses = (id) => {
     return fetch(getAPIURLTerm(id, getTerm())).then(response => response.json())
