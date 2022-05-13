@@ -1,15 +1,14 @@
-import classNames from "classnames";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import {
   selectUser,
-  selectMainSubject,
   setMainSubject,
 } from "../reducers/profileSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useFirebaseDetails } from "../context/collectionProviders";
 import { addAllMajors, selectAllMajors } from "../reducers/classesSlice";
+import Delay from "../components/delay";
 
 export default function Course() {
   const navigate = useNavigate();
@@ -41,19 +40,16 @@ export default function Course() {
   }
 
   return (
-    <>
+    <Delay>
       <div>
         <Row>
           <Col md={4}>Major:</Col>
           <Col xs="auto" className="my-1">
-            <Form.Select
-              defaultValue={majorSelected}
-              onChange={(e) => setMajor(e.target.value)}
-            >
-              {majors.map((x, i) => (
-                <option key={i + 1} value={x.toUpperCase()}>
-                  {x.toUpperCase()}
-                </option>
+            <Form.Select aria-label="Default select" defaultValue={majorSelected} onChange={({ target }) => {
+              setMajor(target.value)
+            }}>
+              {majors.map((x, index) => (
+                <option key={index} value={x.toUpperCase()}>{x.toUpperCase()}</option>
               ))}
             </Form.Select>
           </Col>
@@ -69,6 +65,6 @@ export default function Course() {
           {majorSelected === "" ? "Skip" : "Save Details"}
         </Button>
       </div>
-    </>
+    </Delay>
   );
 }
