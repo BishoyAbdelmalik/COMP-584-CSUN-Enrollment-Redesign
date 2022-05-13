@@ -41,7 +41,7 @@ const LoginForm = ({ onClick, emailState, passwordState }) => {
         </Form.Group>
         <Button
           variant="primary"
-          className="rounded-0 w-50 mx-auto mb-1 mt-1"
+          className="w-50 mx-auto"
           onClick={() => onClick("manual")}
           button-type="manual"
         >

@@ -67,14 +67,14 @@ export default function Search() {
         }} />
         <Button
           variant="primary"
-          className="rounded-0 mb-1 mt-1 w-100"
+          className="mb-1 mt-1 w-100"
           onClick={() => { setSelectedType("major") }}
         >
           Quick search by main subject
         </Button>
         <Button
           variant="primary"
-          className="rounded-0 mb-1 mt-1 w-100"
+          className="mb-1 mt-1 w-100"
           onClick={() => { setSelectedType("ge") }}
         >
           Quick search by GE

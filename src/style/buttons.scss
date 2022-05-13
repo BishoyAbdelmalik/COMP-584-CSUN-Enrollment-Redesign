@@ -1,0 +1,17 @@
+
+.btn-primary {
+    background: transparent;
+    color: $primary;
+    font-weight: bold;
+    border: $primary 2px solid;
+    &:hover{
+        background: $primary;
+        color: white;
+        border: $primary 2px solid;
+    }
+    &:focus{
+        background: darken($primary, 10%);
+        color: white;
+        border: darken($primary, 10%) 2px solid;
+    }
+}
