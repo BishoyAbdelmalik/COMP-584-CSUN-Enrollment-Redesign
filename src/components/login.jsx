@@ -10,6 +10,8 @@ import { selectError, error } from "../reducers/profileSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { signin } from "../actions/auth";
 
+import { handleUserAuthentication } from "../actions/auth";
+
 const Login = () => {
   const emailState = useState("");
   const passwordState = useState("");
@@ -19,21 +21,14 @@ const Login = () => {
   const { logIn, googleSignIn } = useUserAuth();
 
   const handleLogin = async (buttonType) => {
-    try {
-      let currentUser;
-      if (buttonType === "google") {
-        currentUser = await googleSignIn();
-      } else {
-        let email = emailState[0];
-        let password = passwordState[0];
-        currentUser = await logIn(email, password);
-      }
-      if(currentUser){
-        signin(dispatch,currentUser)
-      }
+    // setError("");
 
-    } catch (err) {
-      dispatch(error({ errorMessage: err.message }));
+    if (buttonType === "google") {
+      dispatch(handleUserAuthentication(googleSignIn));
+    } else {
+      let email = emailState[0];
+      let password = passwordState[0];
+      dispatch(handleUserAuthentication(logIn, email, password));
     }
   };
 
@@ -61,7 +56,9 @@ const Login = () => {
           "d-flex justify-content-center align-items-center",
           "pointer"
         )}
-        onClick={() => {handleLogin("google") }}
+        onClick={() => {
+          handleLogin("google");
+        }}
       >
         <BsGoogle className={style.googleIcon} />
         <p className="m-0">Login with Google</p>

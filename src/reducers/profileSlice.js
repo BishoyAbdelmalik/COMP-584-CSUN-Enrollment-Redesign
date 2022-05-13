@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const major = localStorage.getItem("userMajor");
 const initialState = {
   email: "",
   status: "",
   mainSubject: "",
   userUUID: "",
-  errorMessage:"",
+  errorMessage: "",
 };
 
 export const profileSlice = createSlice({
@@ -24,14 +25,25 @@ export const profileSlice = createSlice({
       state.status = "logged-in";
       state.userUUID = action.payload.uid;
       state.errorMessage = "";
+      // const { email, mainSubject, status, uid } = action.payload;
+      // localStorage.setItem(
+      //   "user",
+      //   JSON.stringify({ email, mainSubject, status, uid })
+      // );
+
+      // localStorage.setItem("userMajor", action.payload.mainSubject);
     },
     logout: (state) => {
-      localStorage.clear("user");
+      localStorage.clear();
       return initialState;
     },
     error: (state, action) => {
       console.log(action);
       state.errorMessage = action.payload.errorMessage;
+    },
+    setMainSubject: (state, action) => {
+      localStorage.setItem("userMajor", action.payload.major);
+      state.mainSubject = action.payload.major;
     },
 
     // Use the PayloadAction type to declare the contents of `action.payload`
@@ -53,7 +65,7 @@ export const profileSlice = createSlice({
   // },
 });
 
-export const { login, logout, error } = profileSlice.actions;
+export const { login, logout, error, setMainSubject } = profileSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
@@ -61,7 +73,7 @@ export const { login, logout, error } = profileSlice.actions;
 export const selectMainSubject = (state) => state.profile.mainSubject;
 export const selectEmail = (state) => state.profile.email;
 export const selectStatus = (state) => state.profile.status;
-export const selectUser = (state) => state.profile.user;
+export const selectUser = (state) => state.profile.userUUID;
 export const selectError = (state) => state.profile.errorMessage;
 
 export default profileSlice.reducer;

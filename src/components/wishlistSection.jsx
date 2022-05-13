@@ -7,7 +7,7 @@ const WishlistSection = ({ title, classes, showDropDownState, openModal }) => {
             <h4 className="font-weight-bold">{title ? title : "Unorganized"}</h4>
             <hr className="m-0 mb-1"></hr>
             {classes.map((c, index) => (
-                <ClassCompact key={index} id={c.id} name={c.name} units={c.units} dropDown={showDropDownState} openModal={openModal} />
+                <ClassCompact key={index} id={c.id} name={c.title} units={c.units} dropDown={showDropDownState} openModal={openModal} />
             ))}
             <hr className="m-0 mt-1 mb-1"></hr>
             <div  className={classNames("d-flex", "justify-content-between")}>
