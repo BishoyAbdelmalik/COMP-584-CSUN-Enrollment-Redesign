@@ -21,6 +21,7 @@ import { signin } from "./actions/auth";
 import { auth } from "./firebase";
 import { getRidOfDuplicateClasses, getGEClasses } from "./api/utils";
 import { addGEClass, addMainSubjectClass } from "./reducers/classesSlice";
+import Delay from "./components/delay";
 
 function App() {
   const status = useSelector(selectStatus);
@@ -75,7 +76,7 @@ function App() {
               )}
               <Route
                 path="*"
-                element={<h1 className="text-center">404 Not Found</h1>}
+                element={<Delay><h1 className="text-center">404 Not Found</h1></Delay>}
               />
             </Routes>
           </Container>

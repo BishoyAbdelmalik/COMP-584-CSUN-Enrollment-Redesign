@@ -48,7 +48,9 @@ export const getRidOfDuplicateClasses = (subj) => {
 }
 
 export const getTeacherName = (email) => {
-    return fetch(`${URL_CSUN_API_DIRECTORY}${email}`).then(response => response.json())
+    return fetch(`${URL_CSUN_API_DIRECTORY}${email}`, {
+        cache: "force-cache",
+    }).then(response => response.json())
         .then(data => {
             if (data.status === "200" && data.people.display_name !== undefined) {
                 return data.people.display_name;
