@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useFirebaseDetails } from "../context/collectionProviders";
 import { addAllMajors, selectAllMajors } from "../reducers/classesSlice";
+import Delay from "../components/delay";
 
 export default function Course() {
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ export default function Course() {
   }
 
   return (
-    <>
+    <Delay>
       <div>
         <Row>
           <Col md={4}>Major:</Col>
@@ -64,6 +65,6 @@ export default function Course() {
           {majorSelected === "" ? "Skip" : "Save Details"}
         </Button>
       </div>
-    </>
+    </Delay>
   );
 }
