@@ -46,14 +46,11 @@ export default function Course() {
         <Row>
           <Col md={4}>Major:</Col>
           <Col xs="auto" className="my-1">
-            <Form.Select
-              defaultValue={majorSelected}
-              onChange={(e) => setMajor(e.target.value)}
-            >
-              {majors.map((x, i) => (
-                <option key={i + 1} value={x.toUpperCase()}>
-                  {x.toUpperCase()}
-                </option>
+            <Form.Select aria-label="Default select" defaultValue={majorSelected} onChange={({ target }) => {
+              setMajor(target.value)
+            }}>
+              {majors.map((x, index) => (
+                <option key={index} value={x.toUpperCase()}>{x.toUpperCase()}</option>
               ))}
             </Form.Select>
           </Col>
