@@ -4,7 +4,7 @@ const major = localStorage.getItem("userMajor");
 const initialState = {
   email: "",
   status: "",
-  mainSubject: major || "",
+  mainSubject: "",
   userUUID: "",
   errorMessage: "",
 };
@@ -25,13 +25,13 @@ export const profileSlice = createSlice({
       state.status = "logged-in";
       state.userUUID = action.payload.uid;
       state.errorMessage = "";
-      const { email, mainSubject, status, uid } = action.payload;
-      localStorage.setItem(
-        "user",
-        JSON.stringify({ email, mainSubject, status, uid })
-      );
+      // const { email, mainSubject, status, uid } = action.payload;
+      // localStorage.setItem(
+      //   "user",
+      //   JSON.stringify({ email, mainSubject, status, uid })
+      // );
 
-      localStorage.setItem("userMajor", action.payload.mainSubject);
+      // localStorage.setItem("userMajor", action.payload.mainSubject);
     },
     logout: (state) => {
       localStorage.clear();

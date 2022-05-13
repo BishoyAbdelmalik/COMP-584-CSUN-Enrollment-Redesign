@@ -21,7 +21,7 @@ import logo from "./CSUNorthridgelogo.svg";
 import { Footer } from "./components/footer";
 import { Class } from "./routes/class";
 import { onAuthStateChanged } from "firebase/auth";
-import { signin } from "./actions/auth";
+import { signin, getUserInfo } from "./actions/auth";
 import { auth } from "./firebase";
 import { getRidOfDuplicateClasses, getGEClasses } from "./api/utils";
 import { addGEClass, addMainSubjectClass } from "./reducers/classesSlice";
@@ -39,8 +39,10 @@ function App() {
   }, [status, dispatch]);
 
   useEffect(() => {
-    if (status === 'logged-in') {
-      getRidOfDuplicateClasses(mainSubject).then(response => dispatch(addMainSubjectClass({ mainSubject: response })));
+    if (status === "logged-in") {
+      getRidOfDuplicateClasses(mainSubject).then((response) =>
+        dispatch(addMainSubjectClass({ mainSubject: response }))
+      );
     }
   }, [mainSubject, status, dispatch]);
 
@@ -49,6 +51,7 @@ function App() {
       if (currentuser) {
         // user is logged in, send the user's details to redux, store the current user in the state
         signin(dispatch, currentuser);
+        dispatch(getUserInfo(currentuser.uid));
       } else {
         dispatch(logout());
       }
@@ -58,6 +61,8 @@ function App() {
       unsubscribe();
     };
   }, [dispatch]);
+
+  useEffect(() => {});
 
   return (
     <Delay>
@@ -81,7 +86,11 @@ function App() {
                 )}
                 <Route
                   path="*"
-                  element={<Delay><h1 className="text-center">404 Not Found</h1></Delay>}
+                  element={
+                    <Delay>
+                      <h1 className="text-center">404 Not Found</h1>
+                    </Delay>
+                  }
                 />
               </Routes>
             </Container>

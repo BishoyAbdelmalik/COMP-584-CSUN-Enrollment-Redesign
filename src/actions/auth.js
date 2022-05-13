@@ -1,8 +1,14 @@
 import { getMainSubject } from "../api/utils";
 import { useUserAuth } from "../context/authProviders";
-import { logout, error, login } from "./../reducers/profileSlice";
+import {
+  logout,
+  error,
+  login,
+  setMainSubject,
+} from "./../reducers/profileSlice";
 import { useFirebaseDetails } from "../context/collectionProviders";
 import { setUserWishList } from "./../reducers/wishlistSlice";
+import { async } from "@firebase/util";
 
 export const manualSignUp = (email, password) => async (dispatch) => {
   const { signUp } = useUserAuth();
@@ -41,7 +47,7 @@ export const signin = (dispatch, currentUser) => {
       email: currentUser.email,
       uid: currentUser.uid,
       status: "logged-in",
-      mainSubject: getMainSubject(currentUser.uid),
+      // mainSubject: getMainSubject(currentUser.uid),
     })
   );
 };
@@ -51,26 +57,31 @@ export const handleUserAuthentication =
   async (dispatch) => {
     try {
       let { user: currentUser } = await authCallback(...args);
-      let { checkDBContainsUser } = useFirebaseDetails();
 
-      let userDetails = await checkDBContainsUser(currentUser.uid);
-
-      console.log(userDetails.val(), currentUser);
       dispatch(
         login({
           email: currentUser.email,
           uid: currentUser.uid,
           status: "logged-in",
-          mainSubject: userDetails.exists() && userDetails.val().majorCode,
+          mainSubject: "",
         })
       );
-
-      if (userDetails.exists() && userDetails.val().favourites) {
-        dispatch(
-          setUserWishList([...Object.values(userDetails.val().favourites)])
-        );
-      }
     } catch (err) {
       dispatch(error({ errorMessage: err.message }));
     }
   };
+
+export const getUserInfo = (uuid) => async (dispatch) => {
+  let { checkDBContainsUser } = useFirebaseDetails();
+  let userDetails = await checkDBContainsUser(uuid);
+
+  dispatch(
+    setMainSubject({
+      major: userDetails.exists() && userDetails.val().majorCode,
+    })
+  );
+
+  if (userDetails.exists() && userDetails.val().favourites) {
+    dispatch(setUserWishList([...Object.values(userDetails.val().favourites)]));
+  }
+};
