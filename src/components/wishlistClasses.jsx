@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useFirebaseDetails } from "../context/collectionProviders";
 import { selectUser } from "../reducers/profileSlice";
-import { removeClass } from "../reducers/wishlistSlice";
+import { addClass, removeClass } from "../reducers/wishlistSlice";
 import WishlistSection from "./wishlistSection";
 import WishlistSetCategoryModal from "./wishlistSetCategoryModal";
 
@@ -23,7 +23,9 @@ const WishlistClasses = ({ classes }) => {
     const modalOpen = () => {
         setShowModal(true);
     };
-    const modalSave = () => {
+    const modalSave = (course) => {
+        unbookmark(course);
+        bookmark(course);
         modalClose();
     }
     // const favourites = useSelector(selectWishlist);
@@ -36,6 +38,10 @@ const WishlistClasses = ({ classes }) => {
           dispatch(removeClass(course));
           updateFavorites(uuid, course, false);
         }
+    }
+    const bookmark = (course)=>{
+        dispatch(addClass(course));
+        updateFavorites(uuid, course, true);
     }
     const getClassesForCategory = (category) => classes.filter((c) => c.semester === category);
     return (
