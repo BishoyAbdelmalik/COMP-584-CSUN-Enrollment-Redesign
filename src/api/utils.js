@@ -6,8 +6,11 @@ export const getGEClasses = () => {
         .catch(err => console.error(err));
 }
 
-const getAPIURLTerm = (id, term) => {
-    return `${URL_CSUN_API_TERM}${term}/classes/${id}`
+const getAPIURLTerm = (id, term, type = "classes") => {
+    if (id !== "") {
+        id = `/${id}`;
+    }
+    return `${URL_CSUN_API_TERM}${term}/${type}${id}`
 }
 const getAPIURL = (id) => {
     return `${URL_CSUN_API}/classes/${id}`
@@ -25,6 +28,14 @@ const getTerm = (date = new Date()) => {
         semester = "Summer"
     }
     return `${semester}-${year}`;
+}
+
+export const getAllCourses = () => {
+    return fetch(getAPIURLTerm("", getTerm(), "courses"), {
+        cache: "force-cache",
+    }).then(response => response.json())
+        .then(data => data.courses)
+        .catch(err => console.error(err));
 }
 
 export const getClasses = (id) => {
@@ -48,7 +59,9 @@ export const getRidOfDuplicateClasses = (subj) => {
 }
 
 export const getTeacherName = (email) => {
-    return fetch(`${URL_CSUN_API_DIRECTORY}${email}`).then(response => response.json())
+    return fetch(`${URL_CSUN_API_DIRECTORY}${email}`, {
+        cache: "force-cache",
+    }).then(response => response.json())
         .then(data => {
             if (data.status === "200" && data.people.display_name !== undefined) {
                 return data.people.display_name;
