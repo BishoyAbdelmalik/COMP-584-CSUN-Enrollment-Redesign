@@ -28,7 +28,6 @@ const WishlistClasses = ({ classes }) => {
         bookmark(course);
         modalClose();
     }
-    // const favourites = useSelector(selectWishlist);
     const uuid = useSelector(selectUser);
     let favIds = new Set([...classes.map(({ id }) => id)]);
     let { updateFavorites } = useFirebaseDetails();
