@@ -4,7 +4,7 @@ import WishlistSetCategoryModal from "./wishlistSetCategoryModal";
 
 const WishlistClasses = ({ classes }) => {
     const catagories = [...new Set(classes.map((c) => c.semester))].sort((a, b) => {
-        if (a === null) {
+        if (a === '') {
             return -1;
         }
         return 0;
