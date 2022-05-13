@@ -1,13 +1,13 @@
 import classNames from "classnames";
 import ClassCompact from "./classCompact";
 
-const WishlistSection = ({ title, classes, showDropDownState, openModal }) => {
+const WishlistSection = ({ title, classes, showDropDownState, openModal, unbookmark }) => {
     return (
         <div className="mb-5">
             <h4 className="font-weight-bold">{title ? title : "Unorganized"}</h4>
             <hr className="m-0 mb-1"></hr>
             {classes.map((c, index) => (
-                <ClassCompact key={index} id={c.id} name={c.title} units={c.units} dropDown={showDropDownState} openModal={openModal} />
+                <ClassCompact key={index} id={c.id} title={c.title} units={c.units} dropDown={showDropDownState} openModal={openModal} unbookmark={unbookmark} />
             ))}
             <hr className="m-0 mt-1 mb-1"></hr>
             <div  className={classNames("d-flex", "justify-content-between")}>
