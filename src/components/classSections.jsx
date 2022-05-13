@@ -53,7 +53,7 @@ export const ClassSections = ({ sections }) => {
     return (
         <div className={style.sections}>
             <div className={classNames("d-flex", "justify-content-between")}>
-                <h4 className="m-0">Available Sections</h4>
+                <h2 className="m-0">Available Sections</h2>
                 <SortBy onChange={(value) => setSort(value)} defaultValue={sort} options={SORTING_OPTIONS} />
             </div>
             <hr />
