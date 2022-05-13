@@ -26,6 +26,7 @@ import { auth } from "./firebase";
 import { getRidOfDuplicateClasses, getGEClasses } from "./api/utils";
 import { addGEClass, addMainSubjectClass } from "./reducers/classesSlice";
 import Delay from "./components/delay";
+import { SignUpRoute } from "./routes/SignUpRoute";
 
 function App() {
   const status = useSelector(selectStatus);
@@ -59,33 +60,36 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="d-flex flex-column vh-100">
-      <div>
-        <BrowserRouter>
-          {!!status && <NavBar logo={logo} />}
+    <Delay>
+      <div className="d-flex flex-column vh-100">
+        <div>
+          <BrowserRouter>
+            {!!status && <NavBar logo={logo} />}
 
-          <Container className="pt-3 pb-3">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              {status !== "" && (
-                <>
-                  <Route path="/example" element={<Example />} />
-                  <Route path="/search" element={<Search />} />
-                  <Route path="/wishlist" element={<Wishlist />} />
-                  <Route path="/courseView" element={<CourseView />} />
-                  <Route path="/class/:id" element={<Class />} />
-                </>
-              )}
-              <Route
-                path="*"
-                element={<Delay><h1 className="text-center">404 Not Found</h1></Delay>}
-              />
-            </Routes>
-          </Container>
-        </BrowserRouter>
+            <Container className="pt-3 pb-3">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/signup" element={<SignUpRoute />} />
+                {status !== "" && (
+                  <>
+                    <Route path="/example" element={<Example />} />
+                    <Route path="/search" element={<Search />} />
+                    <Route path="/wishlist" element={<Wishlist />} />
+                    <Route path="/courseView" element={<CourseView />} />
+                    <Route path="/class/:id" element={<Class />} />
+                  </>
+                )}
+                <Route
+                  path="*"
+                  element={<Delay><h1 className="text-center">404 Not Found</h1></Delay>}
+                />
+              </Routes>
+            </Container>
+          </BrowserRouter>
+        </div>
+        {status === "logged-in" && <Footer />}
       </div>
-      {status === "logged-in" && <Footer />}
-    </div>
+    </Delay>
   );
 }
 

@@ -11,7 +11,7 @@ const Home = () => {
   const status = useSelector(selectStatus);
   const mainSubject = useSelector(selectMainSubject);
 
-  return <><Delay>{!!status ? !!mainSubject ? <Search /> : <Course /> : <Login />}</Delay></>;
+  return <>{!!status ? !!mainSubject ? <Search /> : <Course /> : <Login />}</>;
 };
 
 export default Home;
