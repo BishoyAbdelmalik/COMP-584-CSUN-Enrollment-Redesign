@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import Login from "../components/login";
 import Search from "./search";
 import Course from "./course";
-import Delay from "../components/delay";
 
 
 const Home = () => {
