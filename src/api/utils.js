@@ -1,30 +1,48 @@
-import { URL_CSUN_API, URL_CSUN_API_DIRECTORY, URL_CSUN_API_TERM } from "../constants/userConstants";
+import {
+  URL_CSUN_API,
+  URL_CSUN_API_DIRECTORY,
+  URL_CSUN_API_TERM,
+} from "../constants/userConstants";
+
+import { useFirebaseDetails } from "../context/collectionProviders";
 
 export const getGEClasses = () => {
-    return fetch("/ge_categories.json").then(response => response.json())
-        .then(data => (data))
-        .catch(err => console.error(err));
-}
+  return fetch("/ge_categories.json")
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((err) => console.error(err));
+};
 
-const getAPIURLTerm = (id, term) => {
-    return `${URL_CSUN_API_TERM}${term}/classes/${id}`
+const getAPIURLTerm = (id, term, type = "classes") => {
+    if (id !== "") {
+        id = `/${id}`;
+    }
+    return `${URL_CSUN_API_TERM}${term}/${type}${id}`
 }
 const getAPIURL = (id) => {
-    return `${URL_CSUN_API}/classes/${id}`
-}
+  return `${URL_CSUN_API}/classes/${id}`;
+};
 
 const getTerm = (date = new Date()) => {
-    const year = date.getFullYear();
-    const month = date.getMonth()
-    let semester = "Fall";
-    if (month >= 8 && month < 12) {
-        semester = "Fall";
-    } else if (month >= 1 && month <= 5) {
-        semester = "Spring";
-    } else if (month > 5 && month <= 8) {
-        semester = "Summer"
-    }
-    return `${semester}-${year}`;
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  let semester = "Fall";
+  if (month >= 8 && month < 12) {
+    semester = "Fall";
+  } else if (month >= 1 && month <= 5) {
+    semester = "Spring";
+  } else if (month > 5 && month <= 8) {
+    semester = "Summer";
+  }
+  return `${semester}-${year}`;
+};
+
+export const getAllCourses = () => {
+    return fetch(getAPIURLTerm("", getTerm(), "courses"), {
+        cache: "force-cache",
+    }).then(response => response.json())
+        .then(data => data.courses)
+        .catch(err => console.error(err));
 }
 
 export const getClasses = (id) => {
@@ -65,7 +83,9 @@ export const getTeacherName = (email) => {
         .catch(err => console.error(err));
 }
 
-export const getMainSubject = (uuid) => ("comp");
+export const getMainSubject = (uuid) => {
+  return localStorage.getItem("userMajor");
+};
 
 export const convertTime = (time) => {
     time = time.slice(0, -1);
