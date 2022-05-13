@@ -1,9 +1,7 @@
-import classNames from "classnames";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import {
   selectUser,
-  selectMainSubject,
   setMainSubject,
 } from "../reducers/profileSlice";
 import { useSelector, useDispatch } from "react-redux";
