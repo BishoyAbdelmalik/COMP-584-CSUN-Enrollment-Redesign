@@ -15,3 +15,21 @@
         border: darken($primary, 10%) 2px solid;
     }
 }
+
+.btn-secondary {
+    border: $secondary-btn 2px solid;
+    background: transparent;
+    color: black;
+    font-weight: bold;
+    &:hover {
+            background: $secondary-btn;
+            color: white;
+            border: $secondary-btn 2px solid;
+        }
+    
+        &:focus {
+            background: darken($secondary-btn, 10%);
+            color: white;
+            border: darken($secondary-btn, 10%) 2px solid;
+        }
+}
