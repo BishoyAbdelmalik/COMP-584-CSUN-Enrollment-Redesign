@@ -8,7 +8,7 @@ export default function Wishlist() {
   const wishlist = useSelector(selectWishlist);
   return (
     <>
-      <h2 className="text-center">My Bookmarked Courses</h2>
+      <h1 className="text-center">My Bookmarked Courses</h1>
       <div className={classNames("mx-auto",appStyles.form)}>
         <WishlistClasses classes={wishlist}/>
       </div>

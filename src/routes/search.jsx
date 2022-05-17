@@ -16,7 +16,7 @@ export default function Search() {
   const [selectedType, setSelectedType] = useState("");
   return (
     <>
-      <h2 className="text-center">Class Search</h2>
+      <h1 className="text-center">Class Search</h1>
       <div className={classNames("mx-auto", appStyles.form)}>
         <SearchBox onSearch={(value) => {
           console.log(value);
