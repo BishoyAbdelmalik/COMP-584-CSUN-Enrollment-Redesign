@@ -37,7 +37,7 @@ export const ClassTitle = ({ id, title, units }) => {
   useEffect(() => {}, [favourites]);
 
   return (
-    <div className={classNames("mt-3", "mb-3", style.title)}>
+    <div className={classNames("mt-3", style.title)}>
       <p className={classNames("text-muted", "m-0", "h5")}>
         {id} ({units} units)
       </p>
