@@ -24,12 +24,9 @@ export const ClassTitle = ({ id, title, units }) => {
 
   function likeCourse(course) {
     if (favIds.has(course.id)) {
-      // favIds.delete(course.id);
       dispatch(removeClass(course));
       updateFavorites(uuid, course, false);
     } else {
-      // favIds.add(course.id);
-      course.semester=null;
       dispatch(addClass(course));
       updateFavorites(uuid, course, true);
     }
@@ -51,14 +48,14 @@ export const ClassTitle = ({ id, title, units }) => {
             <BsBookmark
               size={30}
               onClick={() => {
-                likeCourse({ id, title, units });
+                likeCourse({ id, title, units, semester: "" });
               }}
             />
           ) : (
             <BsFillBookmarkCheckFill
               size={30}
               onClick={() => {
-                likeCourse({ id, title, units });
+                likeCourse({ id, title, units, semester: "" });
               }}
             />
           )}

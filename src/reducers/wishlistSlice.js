@@ -1,19 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [
-  {
-    semester:"Fall 2022",
-    id: "comp-282",
-    name: "data structures",
-    units: 3  
-  },
-  {
-    semester:null,
-    id: "comp-182",
-    name: "data structures",
-    units: 3  
-  }
-];
+const initialState = [];
 
 export const wishlistSlice = createSlice({
   name: "wishlist",

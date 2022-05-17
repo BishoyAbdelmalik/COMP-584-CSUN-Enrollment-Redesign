@@ -19,14 +19,19 @@ export default function Search() {
       <h1 className="text-center">Class Search</h1>
       <div className={classNames("mx-auto", appStyles.form)}>
         <SearchBox onSearch={(value) => {
+          value = value.trim();
           console.log(value);
           if (selectedType !== "search") {
             setSelectedType("search");
           }
-          // Breaks words in search box apart into an array, assuming they are separated by a space or dash.
-          let searchTerms = value.split(/[ -]/);
-          console.log(searchTerms);
+
           setMatchingCourses(function () {
+            if (value === "") {
+              return [];
+            }
+            // Breaks words in search box apart into an array, assuming they are separated by a space or dash.
+            let searchTerms = value.split(/[ -]/);
+            console.log(searchTerms);
             let subjectMatches = allCourses.filter(function (course) {
               for (let term of searchTerms) {
                 if (!(course.subject.toLowerCase().startsWith(term.toLowerCase()) ||
