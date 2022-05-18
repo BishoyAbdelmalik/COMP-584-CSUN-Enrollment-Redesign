@@ -34,7 +34,6 @@ export default function Course() {
   function handleSubmit() {
     if (majorSelected !== "") {
       updateUserMajorDetails({ id: majorSelected }, uuid);
-      console.log(majorSelected);
       dispatch(setMainSubject({ major: majorSelected }));
     }
   }
