@@ -8,7 +8,7 @@ import Message from "../components/Message";
 
 import { selectError, error } from "../reducers/profileSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { signin } from "../actions/auth";
+import { useNavigate } from "react-router-dom";
 
 import { handleUserAuthentication } from "../actions/auth";
 
@@ -16,13 +16,12 @@ const Login = () => {
   const emailState = useState("");
   const passwordState = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const errorMessage = useSelector(selectError);
   const { logIn, googleSignIn } = useUserAuth();
 
   const handleLogin = async (buttonType) => {
-    // setError("");
-
     if (buttonType === "google") {
       dispatch(handleUserAuthentication(googleSignIn));
     } else {
@@ -35,14 +34,14 @@ const Login = () => {
   return (
     <div
       className={classNames(
-        "text-center",
+        "text-left",
         "d-flex",
         "flex-column",
         "justify-content-center",
         style.fitPageHeight
       )}
     >
-      <h1 className="mt-3 mb-4 font-weight-bold">myCSUNclass</h1>
+      <h1 className="mt-3 mb-4 font-weight-bold">Sign In</h1>
       {errorMessage && <Message variant="danger">{errorMessage}</Message>}
       <LoginForm
         onClick={handleLogin}
@@ -50,19 +49,21 @@ const Login = () => {
         passwordState={passwordState}
         buttonType="manual"
       />
-      <p className="h3 mt-4 mb-4 font-weight-bold">Sign in with:</p>
-      <div
-        className={classNames(
-          "d-flex justify-content-center align-items-center",
-          "pointer"
-        )}
+      <div>
+        <hr />
+        <p>or</p>
+        <hr />
+      </div>
+      <button
+        className="btn-google"
         onClick={() => {
           handleLogin("google");
         }}
       >
-        <BsGoogle className={style.googleIcon} />
-        <p className="m-0">Login with Google</p>
-      </div>
+        <BsGoogle className={style.googleIcon} /> Login with Google
+      </button>
+      <p>Don't have an Account? <span role="link" onClick={() => navigate("/signup", { replace: true })}>Sign Up</span>
+      </p>
     </div>
   );
 };

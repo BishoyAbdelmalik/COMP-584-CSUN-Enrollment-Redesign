@@ -2,20 +2,15 @@ import { Form, Button } from "react-bootstrap";
 import classNames from "classnames";
 
 import appStyles from "./../App.module.scss";
-import { useNavigate } from "react-router-dom";
 
 const LoginForm = ({ onClick, emailState, passwordState }) => {
   const setEmail = emailState[1];
   const setPassword = passwordState[1];
-  const navigate = useNavigate();
 
   return (
     <>
       <Form
         className={classNames(
-          "d-flex",
-          "flex-column",
-          "mx-auto",
           appStyles.form
         )}
       >
@@ -39,21 +34,13 @@ const LoginForm = ({ onClick, emailState, passwordState }) => {
             }}
           />
         </Form.Group>
+        <p>Forgot Password?</p>
         <Button
           variant="primary"
-          className="w-50 mx-auto"
           onClick={() => onClick("manual")}
           button-type="manual"
         >
-          Log In
-        </Button>
-        <Button
-          variant="primary"
-          className="rounded-0 w-50 mx-auto mb-1 mt-1"
-          onClick={() => navigate("/signup", { replace: true })}
-          button-type="manual"
-        >
-          Sign Up
+          Login
         </Button>
       </Form>
     </>
