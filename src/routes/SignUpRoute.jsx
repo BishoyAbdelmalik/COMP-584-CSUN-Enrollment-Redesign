@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import Signup from "../components/Signup";
+import Signup from "../components/loginSignup/Signup";
 import { selectStatus } from "../reducers/profileSlice";
 
 export const SignUpRoute = () => {
