@@ -2,7 +2,7 @@ import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const SubjSnippet = ({ subj }) => {
-    if(subj === undefined){
+    if(subj.length === 0){
         return <Spinner animation="border" />;
     }
     return (

@@ -85,7 +85,7 @@ export default function Search() {
         </Button>
         <div className="mb-3 mt-3">
           {selectedType === "ge" && <GEList ges={ges} />}
-          {selectedType === "major" && <SubjSnippet subj={subj} />}
+          {selectedType === "major" && <SubjSnippet subj={subj === undefined ? []: subj} />}
           {selectedType === "search" && <SubjSnippet subj={matchingCourses} />}
         </div>
       </div>
