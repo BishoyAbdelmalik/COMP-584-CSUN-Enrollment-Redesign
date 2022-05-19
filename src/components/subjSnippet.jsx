@@ -1,7 +1,10 @@
+import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const SubjSnippet = ({ subj }) => {
-    // console.log(subj)
+    if(subj=== undefined){
+        return <Spinner animation="border" />;
+    }
     return (
         <div>
             {subj.map((element, index) => (

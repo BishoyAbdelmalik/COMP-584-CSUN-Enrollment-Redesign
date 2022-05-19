@@ -5,13 +5,11 @@ import {
   setMainSubject,
 } from "../reducers/profileSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { useFirebaseDetails } from "../context/collectionProviders";
 import { addAllMajors, selectAllMajors } from "../reducers/classesSlice";
 import Delay from "../components/delay";
 
 export default function Course() {
-  const navigate = useNavigate();
   const uuid = useSelector(selectUser);
   const dispatch = useDispatch();
   const majors = useSelector(selectAllMajors);
@@ -34,7 +32,6 @@ export default function Course() {
   function handleSubmit() {
     if (majorSelected !== "") {
       updateUserMajorDetails({ id: majorSelected }, uuid);
-      console.log(majorSelected);
       dispatch(setMainSubject({ major: majorSelected }));
     }
   }

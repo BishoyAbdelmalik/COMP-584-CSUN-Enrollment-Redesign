@@ -13,13 +13,6 @@ export const wishlistSlice = createSlice({
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
 
-      /*
-        let exampleClass = {
-            semester: null | "semester name ie fall 2022",
-            id: "comp-110",
-            name: "Introduction to Algorithms and Programming",
-            units: 3
-        }*/
       const newClassId = action.payload.id;
       if (state.find((e) => e.id === newClassId)) {
         return state;
