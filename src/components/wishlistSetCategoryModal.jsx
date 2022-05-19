@@ -45,7 +45,6 @@ const WishlistSetCategoryModal = ({ show, handleClose, handleSave, course }) => 
                                 if (target.value.length > 4) {
                                     target.value = year;
                                 }
-                                console.log(target.value);
                                 setYear(target.value);
                             }}
                         />

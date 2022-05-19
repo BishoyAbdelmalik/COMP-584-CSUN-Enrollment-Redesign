@@ -15,7 +15,6 @@ export const ClassTitle = ({ id, title, units }) => {
   const favourites = useSelector(selectWishlist);
   const uuid = useSelector(selectUser);
 
-  console.log(favourites);
   const dispatch = useDispatch();
   let { updateFavorites } = useFirebaseDetails();
   let favIds = new Set([...favourites.map(({ id }) => id)]);
