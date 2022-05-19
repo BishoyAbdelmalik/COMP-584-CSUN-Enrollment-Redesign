@@ -1,10 +1,10 @@
 import classNames from "classnames";
 import style from "./classPage.module.scss"
-import appStyle from "./../App.module.scss"
+import appStyle from "./../../App.module.scss"
 import { Section } from "./section";
 import { useState } from "react";
 import SortBy from "./sortingBy";
-import { SORTING_OPTIONS } from "../constants/userConstants";
+import { SORTING_OPTIONS } from "../../constants/userConstants";
 
 const sortingOptions = {
     section: (a, b) => {

@@ -1,7 +1,7 @@
 import classNames from "classnames"
 import { useEffect, useState } from "react"
-import { convertTime, getTeacherName } from "../api/utils"
-import appStyle from "./../App.module.scss"
+import { convertTime, getTeacherName } from "../../api/utils"
+import appStyle from "./../../App.module.scss"
 import style from "./classPage.module.scss"
 import { Card, Button } from "react-bootstrap";
 

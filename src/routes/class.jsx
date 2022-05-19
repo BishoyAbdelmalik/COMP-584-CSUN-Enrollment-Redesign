@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getClasses } from "../api/utils";
 import { MdKeyboardArrowLeft } from "react-icons/md";
-import { ClassTitle } from "../components/classTitle";
+import { ClassTitle } from "../components/SingleClassView/classTitle";
 import { Spinner } from "react-bootstrap";
-import { ClassDescription } from "../components/classDescription";
-import { ClassSections } from "../components/classSections";
+import { ClassDescription } from "../components/SingleClassView/classDescription";
+import { ClassSections } from "../components/SingleClassView/classSections";
 import appStyle from "./../App.module.scss";
-import style from "./../components/classPage.module.scss";
+import style from "./../components/SingleClassView/classPage.module.scss";
 
 export const Class = () => {
   const { id } = useParams();

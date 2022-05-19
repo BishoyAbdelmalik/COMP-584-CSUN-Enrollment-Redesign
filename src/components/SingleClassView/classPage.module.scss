@@ -1,11 +1,10 @@
-@import "../style/variables.scss";
-
-h1{
+@import "../../style/variables.scss";
+h1 {
     font-size: 2rem;
     font-weight: bold;
 }
 
-h2{
+h2 {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--bs-gray-700);
@@ -14,10 +13,7 @@ h2{
 .pageGrid {
     display: grid;
     gap: 1rem;
-    grid-template-areas: 
-    "title"
-    "description"
-    "sections";
+    grid-template-areas: "title" "description" "sections";
 }
 
 .sectionGrid {
@@ -25,7 +21,7 @@ h2{
     gap: 1rem;
 }
 
-.sectionTextGrid{
+.sectionTextGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -42,28 +38,26 @@ h2{
     grid-area: description;
 }
 
-@media screen and (min-width: map-get($break-point , 'md')) {
-    h1{
+@media screen and (min-width: map-get($break-point, 'md')) {
+    h1 {
         font-size: 2.75rem;
     }
-    h2{
+    h2 {
         font-size: 1.75rem;
     }
-    .sectionGrid{
+    .sectionGrid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and (min-width: map-get($break-point , 'lg')) {
-    .pageGrid{
-        grid-template-areas: 
-        "title title title"
-        "sections sections description";
+@media screen and (min-width: map-get($break-point, 'lg')) {
+    .pageGrid {
+        grid-template-areas: "title title title" "sections sections description";
         grid-template-columns: 1fr 1fr 24rem;
     }
 }
 
-@media screen and (min-width: map-get($break-point , 'xl')) {
+@media screen and (min-width: map-get($break-point, 'xl')) {
     .sectionGrid {
         grid-template-columns: repeat(3, 1fr);
     }
