@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useFirebaseDetails } from "../context/collectionProviders";
-import { selectUser } from "../reducers/profileSlice";
-import { addClass, removeClass } from "../reducers/wishlistSlice";
+import { useFirebaseDetails } from "../../context/collectionProviders";
+import { selectUser } from "../../reducers/profileSlice";
+import { addClass, removeClass } from "../../reducers/wishlistSlice";
 import WishlistSection from "./wishlistSection";
 import WishlistSetCategoryModal from "./wishlistSetCategoryModal";
 

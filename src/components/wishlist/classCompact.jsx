@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { Dropdown } from "react-bootstrap";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import appStyles from './../App.module.scss';
+import appStyles from './../../App.module.scss';
 import style from './classCompact.module.scss'
 import { FaFolder } from "react-icons/fa";
 import { BsXCircle } from "react-icons/bs";
