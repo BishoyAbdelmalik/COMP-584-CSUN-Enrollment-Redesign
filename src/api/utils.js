@@ -4,7 +4,6 @@ import {
   URL_CSUN_API_TERM,
 } from "../constants/userConstants";
 
-import { useFirebaseDetails } from "../context/collectionProviders";
 
 export const getGEClasses = () => {
   return fetch("/ge_categories.json")

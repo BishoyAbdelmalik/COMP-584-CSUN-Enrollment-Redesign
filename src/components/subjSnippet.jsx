@@ -8,7 +8,7 @@ const SubjSnippet = ({ subj }) => {
     return (
         <div>
             {subj.map((element, index) => (
-                <div key={index} eventKey={index}>
+                <div key={index}>
                     <Link to={`/class/${element.subject}-${element.catalog_number}`}>
                         <h2>{element.subject}-{element.catalog_number} {element.title}</h2>
                     </Link>

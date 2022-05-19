@@ -42,7 +42,7 @@ function App() {
   },[allCourses,dispatch]);
 
   useEffect(() => {
-    if (status === "logged-in") {
+    if (status === "logged-in" && mainSubject) {
       getRidOfDuplicateClasses(mainSubject).then((response) =>
         dispatch(addMainSubjectClass({ mainSubject: response }))
       );
@@ -65,7 +65,6 @@ function App() {
     };
   }, [dispatch]);
 
-  useEffect(() => {});
 
   return (
     <Delay>
