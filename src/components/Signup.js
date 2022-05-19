@@ -18,7 +18,6 @@ const Signup = () => {
 
   const dispatch = useDispatch();
   const { signUp } = useUserAuth();
-  let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,7 +44,7 @@ const Signup = () => {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
               type="email"
-              placeholder="Email address"
+              placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
