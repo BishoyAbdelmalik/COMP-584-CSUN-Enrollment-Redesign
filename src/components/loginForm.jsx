@@ -32,7 +32,6 @@ const LoginForm = ({ onClick, emailState, passwordState }) => {
             }}
           />
         </Form.Group>
-        <p className="mb-2">Forgot Password?</p>
         <Button
           variant="primary"
           onClick={() => onClick("manual")}

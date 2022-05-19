@@ -5,6 +5,12 @@ import { Button } from "react-bootstrap";
 import { useUserAuth } from "../context/authProviders";
 import { useDispatch } from "react-redux";
 import { login } from "../reducers/profileSlice";
+import logo from "./../CSUNorthridgelogo.svg";
+import style from "./login.module.scss";
+import classNames from "classnames";
+import Message from "../components/Message";
+import appStyles from "./../App.module.scss";
+import LoginOrLine from "./loginOr";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -30,13 +36,29 @@ const Signup = () => {
       setError(err.message);
     }
   };
-
   return (
-    <>
-      <div className="p-4 box">
-        <h2 className="mb-3"> Signup</h2>
-        {error && <Alert variant="danger">{error}</Alert>}
-        <Form onSubmit={handleSubmit}>
+    <div
+      className={classNames(
+        "text-left",
+        style.fitPageHeight,
+        style.backgroundImg
+      )}
+    >
+      <div className={classNames(style.loginWrapper)}>
+        <div>
+          <img
+            alt="California State California"
+            src={logo}
+            height="30"
+            className="d-inline-block align-content-center"
+          />{" "}
+          | Enrollment
+        </div>
+        <h1>Sign Up</h1>
+        {error && <Message variant="danger">{error}</Message>}
+        <Form className={classNames(
+          appStyles.form
+        )} onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
               type="email"
@@ -45,7 +67,7 @@ const Signup = () => {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-1" controlId="formBasicPassword">
             <Form.Control
               type="password"
               placeholder="Password"
@@ -53,17 +75,18 @@ const Signup = () => {
             />
           </Form.Group>
 
-          <div className="d-grid gap-2">
             <Button variant="primary" type="Submit">
               Sign up
             </Button>
-          </div>
         </Form>
+        <LoginOrLine/>
+        <p className="mt-3">
+         Already have an account? <Link to="/">Log In</Link>
+       </p>
+      
       </div>
-      <div className="p-4 box mt-3 text-center">
-        Already have an account? <Link to="/">Log In</Link>
-      </div>
-    </>
+
+    </div>
   );
 };
 

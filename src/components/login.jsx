@@ -12,6 +12,7 @@ import { selectError, error } from "../reducers/profileSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 import { handleUserAuthentication } from "../actions/auth";
+import LoginOrLine from "./loginOr";
 
 const Login = () => {
   const emailState = useState("");
@@ -57,11 +58,7 @@ const Login = () => {
           passwordState={passwordState}
           buttonType="manual"
         />
-        <div className={style.LoginDivider}>
-          <hr />
-          <p>or</p>
-          <hr />
-        </div>
+        <LoginOrLine/>
         <button
           className="btn-google"
           onClick={() => {
