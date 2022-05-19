@@ -5,12 +5,11 @@ import { Button } from "react-bootstrap";
 import { useUserAuth } from "../context/authProviders";
 import { useDispatch } from "react-redux";
 import { login } from "../reducers/profileSlice";
-import logo from "./../CSUNorthridgelogo.svg";
-import style from "./login.module.scss";
 import classNames from "classnames";
 import Message from "../components/Message";
 import appStyles from "./../App.module.scss";
 import LoginOrLine from "./loginOr";
+import LoginSignupWrapper from "./loginSignupWrapper";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -37,23 +36,7 @@ const Signup = () => {
     }
   };
   return (
-    <div
-      className={classNames(
-        "text-left",
-        style.fitPageHeight,
-        style.backgroundImg
-      )}
-    >
-      <div className={classNames(style.loginWrapper)}>
-        <div>
-          <img
-            alt="California State California"
-            src={logo}
-            height="30"
-            className="d-inline-block align-content-center"
-          />{" "}
-          | Enrollment
-        </div>
+    <LoginSignupWrapper>
         <h1>Sign Up</h1>
         {error && <Message variant="danger">{error}</Message>}
         <Form className={classNames(
@@ -84,10 +67,9 @@ const Signup = () => {
          Already have an account? <Link to="/">Log In</Link>
        </p>
       
-      </div>
-
-    </div>
-  );
+    </LoginSignupWrapper>
+  )
+ 
 };
 
 export default Signup;
