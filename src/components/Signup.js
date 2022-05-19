@@ -5,6 +5,11 @@ import { Button } from "react-bootstrap";
 import { useUserAuth } from "../context/authProviders";
 import { useDispatch } from "react-redux";
 import { login } from "../reducers/profileSlice";
+import classNames from "classnames";
+import Message from "../components/Message";
+import appStyles from "./../App.module.scss";
+import LoginOrLine from "./loginOr";
+import LoginSignupWrapper from "./loginSignupWrapper";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -13,7 +18,6 @@ const Signup = () => {
 
   const dispatch = useDispatch();
   const { signUp } = useUserAuth();
-  let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,22 +34,22 @@ const Signup = () => {
       setError(err.message);
     }
   };
-
   return (
-    <>
-      <div className="p-4 box">
-        <h2 className="mb-3"> Signup</h2>
-        {error && <Alert variant="danger">{error}</Alert>}
-        <Form onSubmit={handleSubmit}>
+    <LoginSignupWrapper>
+        <h1>Sign Up</h1>
+        {error && <Message variant="danger">{error}</Message>}
+        <Form className={classNames(
+          appStyles.form
+        )} onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control
               type="email"
-              placeholder="Email address"
+              placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-1" controlId="formBasicPassword">
             <Form.Control
               type="password"
               placeholder="Password"
@@ -53,18 +57,18 @@ const Signup = () => {
             />
           </Form.Group>
 
-          <div className="d-grid gap-2">
             <Button variant="primary" type="Submit">
               Sign up
             </Button>
-          </div>
         </Form>
-      </div>
-      <div className="p-4 box mt-3 text-center">
-        Already have an account? <Link to="/">Log In</Link>
-      </div>
-    </>
-  );
+        <LoginOrLine/>
+        <p className="mt-3">
+         Already have an account? <Link to="/">Log In</Link>
+       </p>
+      
+    </LoginSignupWrapper>
+  )
+ 
 };
 
 export default Signup;

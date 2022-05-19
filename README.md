@@ -39,6 +39,9 @@ After installing the packages you can run it using the command below.
 npm start
 ```
 
+### Wireframe
+- [Low-Fi Figma File](https://www.figma.com/file/nUBUYkn3WErjUAOGaMPj50/COMP-585---CSUN-Classes?node-id=0%3A1) 
+
 ### Live Deployment
 
 Open [https://mycsunclass.netlify.app/](https://mycsunclass.netlify.app/) to view it in your browser.

@@ -72,7 +72,7 @@ function App() {
       <div className="d-flex flex-column vh-100">
         <div>
           <BrowserRouter>
-            {!!status && <NavBar logo={logo} />}
+            {!!status && mainSubject && <NavBar logo={logo} />}
 
             <Container className="pt-3 pb-3">
               <Routes>

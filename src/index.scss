@@ -9,6 +9,21 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+    overflow-x: hidden;
+}
+
+a{
+    color: $primary;
+    text-decoration: $primary underline;
+    h2 {
+        color: $primary;
+    }
+    &:hover{
+        color: rgb(68, 68, 68);
+    }
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

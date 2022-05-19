@@ -1,4 +1,4 @@
-import { Row, Col, Form, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import {
   selectUser,
@@ -8,6 +8,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useFirebaseDetails } from "../context/collectionProviders";
 import { addAllMajors, selectAllMajors } from "../reducers/classesSlice";
 import Delay from "../components/delay";
+import LoginSignupWrapper from "../components/loginSignupWrapper";
+import classNames from "classnames";
+import appStyles from "./../App.module.scss";
 
 export default function Course() {
   const uuid = useSelector(selectUser);
@@ -37,31 +40,32 @@ export default function Course() {
   }
 
   return (
-    <Delay>
-      <div>
-        <Row>
-          <Col md={4}>Major:</Col>
-          <Col xs="auto" className="my-1">
-            <Form.Select aria-label="Default select" defaultValue={majorSelected} onChange={({ target }) => {
-              setMajor(target.value)
-            }}>
-              {majors.map((x, index) => (
-                <option key={index} value={x.toUpperCase()}>{x.toUpperCase()}</option>
+    <LoginSignupWrapper>
+      <Delay>
+        <div className={classNames(
+          appStyles.form
+        )}>
+          <h2 className="mt-4">Select main subject:</h2>
+          <div className="mt-4">
+          <Form.Select aria-label="Default select" defaultValue={majorSelected} onChange={({ target }) => {
+            setMajor(target.value)
+          }}>
+            {majors.map((x, index) => (
+              <option key={index} value={x.toUpperCase()}>{x.toUpperCase()}</option>
               ))}
-            </Form.Select>
-          </Col>
-        </Row>
-
-        <Button
-          variant="primary"
-          className="rounded-0 mb-1 mt-1 w-100"
-          onClick={() => {
-            handleSubmit();
-          }}
-        >
-          {majorSelected === "" ? "Skip" : "Save Details"}
-        </Button>
-      </div>
-    </Delay>
+          </Form.Select>
+          </div>
+          <Button
+            variant="primary"
+            className="mt-4"
+            onClick={() => {
+              handleSubmit();
+            }}
+          >
+            {majorSelected === "" ? "Skip" : "Save Details"}
+          </Button>
+        </div>
+      </Delay>
+    </LoginSignupWrapper>
   );
 }

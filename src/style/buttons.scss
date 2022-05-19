@@ -22,14 +22,32 @@
     color: black;
     font-weight: bold;
     &:hover {
-            background: $secondary-btn;
-            color: white;
-            border: $secondary-btn 2px solid;
-        }
+        background: $secondary-btn;
+        color: white;
+        border: $secondary-btn 2px solid;
+    }
     
-        &:focus {
-            background: darken($secondary-btn, 10%);
-            color: white;
-            border: darken($secondary-btn, 10%) 2px solid;
-        }
+    &:focus {
+        background: darken($secondary-btn, 10%);
+        color: white;
+        border: darken($secondary-btn, 10%) 2px solid;
+    }
+}
+
+.btn-google{
+    border: none;
+    background: #E64B36;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: .75rem;
+    width: 100%;
+    svg{width: 25px;}
+    &:hover {
+        background: darken(#E64B36, 7%);
+    }
+    
+    &:focus {
+        background: darken(#E64B36, 10%);
+    }
 }
