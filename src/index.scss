@@ -14,10 +14,14 @@ body {
 }
 
 a{
+    color: $primary;
+    text-decoration: $primary underline;
     h2 {
         color: $primary;
     }
-    text-decoration: $primary underline;
+    &:hover{
+        color: rgb(68, 68, 68);
+    }
 }
 
 code {
