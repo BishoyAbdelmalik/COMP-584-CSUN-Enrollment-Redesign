@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import logo from "./../CSUNorthridgelogo.svg";
+import logo from "./../../CSUNorthridgelogo.svg";
 import style from "./login.module.scss";
 
 const LoginSignupWrapper = ({children}) => {

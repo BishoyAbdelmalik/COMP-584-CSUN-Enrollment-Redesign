@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { BsGoogle } from "react-icons/bs";
-import { useUserAuth } from "../context/authProviders";
+import { useUserAuth } from "../../context/authProviders";
 import style from "./login.module.scss";
 import LoginForm from "./loginForm";
-import Message from "../components/Message";
+import Message from "../Message";
 import { Link } from "react-router-dom";
 
-import { selectError,  } from "../reducers/profileSlice";
+import { selectError, } from "../../reducers/profileSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-import { handleUserAuthentication } from "../actions/auth";
+import { handleUserAuthentication } from "../../actions/auth";
 import LoginOrLine from "./loginOr";
 import LoginSignupWrapper from "./loginSignupWrapper";
 
@@ -32,25 +32,25 @@ const Login = () => {
   };
   return (
     <LoginSignupWrapper>
-        <h1>Sign In</h1>
-        {errorMessage && <Message variant="danger">{errorMessage}</Message>}
-        <LoginForm
-          onClick={handleLogin}
-          emailState={emailState}
-          passwordState={passwordState}
-          buttonType="manual"
-        />
-        <LoginOrLine/>
-        <button
-          className="btn-google"
-          onClick={() => {
-            handleLogin("google");
-          }}
-        >
-          <BsGoogle className={style.googleIcon} /> Login with Google
-        </button>
-        <p className="mt-3">Don't have an Account? <Link to="/signup">Sign Up</Link>
-        </p>
+      <h1>Sign In</h1>
+      {errorMessage && <Message variant="danger">{errorMessage}</Message>}
+      <LoginForm
+        onClick={handleLogin}
+        emailState={emailState}
+        passwordState={passwordState}
+        buttonType="manual"
+      />
+      <LoginOrLine />
+      <button
+        className="btn-google"
+        onClick={() => {
+          handleLogin("google");
+        }}
+      >
+        <BsGoogle className={style.googleIcon} /> Login with Google
+      </button>
+      <p className="mt-3">Don't have an Account? <Link to="/signup">Sign Up</Link>
+      </p>
     </LoginSignupWrapper>
   )
 };

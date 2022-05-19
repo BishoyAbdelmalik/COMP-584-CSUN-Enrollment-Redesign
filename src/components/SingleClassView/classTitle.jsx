@@ -2,13 +2,13 @@ import classNames from "classnames";
 import { BsBookmark, BsFillBookmarkCheckFill } from "react-icons/bs";
 import style from "./classPage.module.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { selectUser } from "../reducers/profileSlice";
+import { selectUser } from "../../reducers/profileSlice";
 import {
   selectWishlist,
   removeClass,
   addClass,
-} from "../reducers/wishlistSlice";
-import { useFirebaseDetails } from "../context/collectionProviders";
+} from "../../reducers/wishlistSlice";
+import { useFirebaseDetails } from "../../context/collectionProviders";
 import { useEffect, useState } from "react";
 
 export const ClassTitle = ({ id, title, units }) => {

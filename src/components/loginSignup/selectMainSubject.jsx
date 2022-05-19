@@ -3,16 +3,16 @@ import { useEffect, useState } from "react";
 import {
   selectUser,
   setMainSubject,
-} from "../reducers/profileSlice";
+} from "../../reducers/profileSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useFirebaseDetails } from "../context/collectionProviders";
-import { addAllMajors, selectAllMajors } from "../reducers/classesSlice";
-import Delay from "../components/delay";
-import LoginSignupWrapper from "../components/loginSignupWrapper";
+import { useFirebaseDetails } from "../../context/collectionProviders";
+import { addAllMajors, selectAllMajors } from "../../reducers/classesSlice";
+import Delay from "../delay";
+import LoginSignupWrapper from "./loginSignupWrapper";
 import classNames from "classnames";
-import appStyles from "./../App.module.scss";
+import appStyles from "./../../App.module.scss";
 
-export default function Course() {
+export default function SelectMainSubject() {
   const uuid = useSelector(selectUser);
   const dispatch = useDispatch();
   const majors = useSelector(selectAllMajors);

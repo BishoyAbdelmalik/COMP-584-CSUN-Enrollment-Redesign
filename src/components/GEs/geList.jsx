@@ -1,5 +1,5 @@
 import { Accordion} from "react-bootstrap";
-import { GESection } from "./geSection";
+import { GECategory } from "./geCategory";
 
 const GEList = ({ ges }) => {
     
@@ -9,7 +9,7 @@ const GEList = ({ ges }) => {
                 <Accordion.Item key={index} eventKey={index}>
                     <Accordion.Header>{element.name}</Accordion.Header>
                     <Accordion.Body>
-                        <GESection classes={element.courses}/>
+                        <GECategory classes={element.courses}/>
                     </Accordion.Body>
                 </Accordion.Item>
             ))}

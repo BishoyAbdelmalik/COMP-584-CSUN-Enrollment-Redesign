@@ -1,12 +1,12 @@
 import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const SubjSnippet = ({ subj }) => {
-    if(subj=== undefined){
+const SubjSnippet = ({ subj, loading }) => {
+    if (loading) {
         return <Spinner animation="border" />;
     }
     return (
-        <div>
+        <>
             {subj.map((element, index) => (
                 <div key={index}>
                     <Link to={`/class/${element.subject}-${element.catalog_number}`}>
@@ -16,8 +16,13 @@ const SubjSnippet = ({ subj }) => {
                     <hr />
                 </div>
             ))}
-        </div>
+        </>
     );
 }
+
+SubjSnippet.defaultProps = {
+    loading: false
+};
+
 
 export default SubjSnippet;

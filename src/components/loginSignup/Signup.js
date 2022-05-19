@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import { useUserAuth } from "../context/authProviders";
+import { useUserAuth } from "../../context/authProviders";
 import { useDispatch } from "react-redux";
-import { login } from "../reducers/profileSlice";
+import { login } from "../../reducers/profileSlice";
 import classNames from "classnames";
-import Message from "../components/Message";
-import appStyles from "./../App.module.scss";
+import Message from "../Message";
+import appStyles from "./../../App.module.scss";
 import LoginOrLine from "./loginOr";
 import LoginSignupWrapper from "./loginSignupWrapper";
 

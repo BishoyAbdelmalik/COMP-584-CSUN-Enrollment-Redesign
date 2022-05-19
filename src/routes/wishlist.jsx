@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useSelector } from "react-redux";
-import WishlistClasses from "../components/wishlistClasses";
+import WishlistClasses from "../components/wishlist/wishlistClasses";
 import { selectWishlist } from "../reducers/wishlistSlice";
 import appStyles from "./../App.module.scss"
 
