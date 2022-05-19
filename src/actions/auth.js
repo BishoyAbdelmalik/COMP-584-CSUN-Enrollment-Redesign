@@ -1,4 +1,3 @@
-import { getMainSubject } from "../api/utils";
 import { useUserAuth } from "../context/authProviders";
 import {
   logout,
@@ -8,7 +7,6 @@ import {
 } from "./../reducers/profileSlice";
 import { useFirebaseDetails } from "../context/collectionProviders";
 import { setUserWishList } from "./../reducers/wishlistSlice";
-import { async } from "@firebase/util";
 
 export const manualSignUp = (email, password) => async (dispatch) => {
   const { signUp } = useUserAuth();
@@ -16,7 +14,7 @@ export const manualSignUp = (email, password) => async (dispatch) => {
   try {
     let currentUser = await signUp(email, password);
     let { checkDBContainsUser } = useFirebaseDetails();
-    let userDetails = await checkDBContainsUser(currentUser.user.uid);
+    await checkDBContainsUser(currentUser.user.uid);
 
     dispatch(
       login({
