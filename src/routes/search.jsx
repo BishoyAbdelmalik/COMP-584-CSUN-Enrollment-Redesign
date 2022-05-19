@@ -2,11 +2,11 @@ import SearchBox from "../components/searchBox";
 import { Button } from "react-bootstrap";
 import appStyles from "./../App.module.scss"
 import classNames from "classnames";
-import GEList from "./../components/geList";
 import SubjSnippet from "../components/subjSnippet";
 import { selectAllCourses, selectGE, selectMainSubjectClasses } from "../reducers/classesSlice";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import GEList from "../components/GEs/geList";
 
 export default function Search() {
   const ges = useSelector(selectGE);

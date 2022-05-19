@@ -1,7 +1,7 @@
 import { ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const GESection = ({ classes }) => {
+export const GECategory = ({ classes }) => {
   return (
     <ListGroup variant="flush">
       {classes.map((course, index) => (
