@@ -1,8 +1,8 @@
 import { Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const SubjSnippet = ({ subj }) => {
-    if(subj.length === 0){
+const SubjSnippet = ({ subj, loading }) => {
+    if (loading) {
         return <Spinner animation="border" />;
     }
     return (
@@ -19,5 +19,10 @@ const SubjSnippet = ({ subj }) => {
         </>
     );
 }
+
+SubjSnippet.defaultProps = {
+    loading: false
+};
+
 
 export default SubjSnippet;
