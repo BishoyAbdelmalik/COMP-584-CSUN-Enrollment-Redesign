@@ -10,7 +10,6 @@ const SearchBox = ({onSearch}) => {
                     <Form.Control
                         type="text"
                         placeholder="Search"
-                        className="rounded-0"
                         onChange={({ target }) => {
                             onSearch(target.value);
                         }}

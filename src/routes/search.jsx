@@ -75,14 +75,14 @@ export default function Search() {
           className="mb-1 mt-1 w-100"
           onClick={() => { setSelectedType("major") }}
         >
-          Quick search by main subject
+          Quick Search by Main Subject
         </Button>
         <Button
           variant="primary"
           className="mb-1 mt-1 w-100"
           onClick={() => { setSelectedType("ge") }}
         >
-          Quick search by GE
+          Quick Search by GE
         </Button>
         <div className="mb-3 mt-3">
           {selectedType === "ge" && <GEList ges={ges} />}

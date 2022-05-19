@@ -18,23 +18,21 @@ const LoginForm = ({ onClick, emailState, passwordState }) => {
           <Form.Control
             type="email"
             placeholder="Email"
-            className="rounded-0"
             onChange={({ target }) => {
               setEmail(target.value);
             }}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-1" controlId="formBasicPassword">
           <Form.Control
             type="password"
             placeholder="Password"
-            className="rounded-0"
             onChange={({ target }) => {
               setPassword(target.value);
             }}
           />
         </Form.Group>
-        <p>Forgot Password?</p>
+        <p className="mb-2">Forgot Password?</p>
         <Button
           variant="primary"
           onClick={() => onClick("manual")}
