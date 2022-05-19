@@ -15,8 +15,9 @@ body {
 
 a{
     h2 {
-        color: var(--bs-primary);
+        color: $primary;
     }
+    text-decoration: $primary underline;
 }
 
 code {
