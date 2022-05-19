@@ -4,7 +4,6 @@ import Search from "./routes/search";
 import Wishlist from "./routes/wishlist";
 import Home from "./routes/home";
 
-import CourseView from "./routes/courseView";
 import NavBar from "./components/navbar";
 import { Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -81,7 +80,6 @@ function App() {
                   <>
                     <Route path="/search" element={<Search />} />
                     <Route path="/wishlist" element={<Wishlist />} />
-                    <Route path="/courseView" element={<CourseView />} />
                     <Route path="/class/:id" element={<Class />} />
                   </>
                 )}
