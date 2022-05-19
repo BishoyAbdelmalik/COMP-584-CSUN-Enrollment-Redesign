@@ -2,7 +2,6 @@ import { Accordion} from "react-bootstrap";
 import { GESection } from "./geSection";
 
 const GEList = ({ ges }) => {
-    console.log(ges);
     
     return (
         <Accordion>
