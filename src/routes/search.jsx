@@ -30,7 +30,6 @@ export default function Search() {
             }
             // Breaks words in search box apart into an array, assuming they are separated by a space or dash.
             let searchTerms = value.split(/[ -]/);
-            console.log(searchTerms);
             let subjectMatches = allCourses.filter(function (course) {
               for (let term of searchTerms) {
                 if (!(course.subject.toLowerCase().startsWith(term.toLowerCase()) ||
